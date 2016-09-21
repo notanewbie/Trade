@@ -269,11 +269,14 @@ def Dole(Thing, i):
     print "_-=-_"
     print "Dole() Running."
     #print "Doling out " + Thing.Name
-    if i == 0:
-        Thing.Taken = Thing.Left - random.randint(0, Thing.Left);
+    Max = int(Thing.Left * .5)
+    if i < 3:
+        print "For player " + str(i) + " I'm lowering the maximum ammount he can get from " + str(Thing.Left) + " to " + str(Max)
+        Thing.Taken = random.randint(0, Max);
+        print "See, I only took " + str(Thing.Taken)
         #Play[i].Gold = Thing.Taken
         Thing.Left = Thing.Left - Thing.Taken
-    else:
+    if i > 2:
         Thing.Taken = Thing.Left - random.randint(0, Thing.Left);
         #Play[i].Gold = Thing.Taken
         Thing.Left = Thing.Left - Thing.Taken
