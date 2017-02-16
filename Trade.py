@@ -904,4 +904,86 @@ def Trade(ThisPlayer, ThatPlayer, Giveamount, Giving, Getamount, Getting):
     if Getting is "Horses":
         ThisPlayer.Horses = ThisPlayer.Horses - Giveamount
         ThatPlayer.Horses = ThatPlayer.Horses + Giveamount
-Trade(Play[0], Play[1], 1, "Gold", 1, "Silver")
+def getItem(Person, Object):
+    if Object is "Gold":
+        return Person.Gold
+    if Object is "Silver":
+        return Person.Silver
+    if Object is "Bronze":
+        return Person.Bronze
+    if Object is "Platinum":
+        return Person.Platinum
+    if Object is "Uranium":
+        return Person.Uranium
+    if Object is "Iron":
+        return Person.Iron
+    if Object is "Tin":
+        return Person.Tin
+    if Object is "Titanium":
+        return Person.Titanium
+    if Object is "Vibranium":
+        return Person.Vibranium
+    if Object is "Ultanium":
+        return Person.Ultanium
+    if Object is "Bread":
+        return Person.Bread
+    if Object is "Sugar":
+        return Person.Sugar
+    if Object is "Salt":
+        return Person.Salt
+    if Object is "Corn":
+        return Person.Corn
+    if Object is "Chocolate":
+        return Person.Chocolate
+    if Object is "Pistachios":
+        return Person.Pistachios
+    if Object is "Bacon":
+        return Person.Bacon
+    if Object is "Oysters":
+        return Person.Oysters
+    if Object is "Eggs":
+        return Person.Eggs
+    if Object is "Beef":
+        return Person.Beef
+    if Object is "Cherries":
+        return Person.Cherries
+    if Object is "Rubies":
+        return Person.Rubies
+    if Object is "Diamonds":
+        return Person.Diamonds
+    if Object is "Sapphires":
+        return Person.Sapphires
+    if Object is "Admantium":
+        return Person.Admantium
+    if Object is "Blackberries":
+        return Person.Blackberries
+    if Object is "Kiwi":
+        return Person.Kiwi
+    if Object is "Strawberries":
+        return Person.Strawberries
+    if Object is "Wood":
+        return Person.Wood
+    if Object is "Cows":
+        return Person.Cows
+    if Object is "Chicken":
+        return Person.Chicken
+    if Object is "Turkey":
+        return Person.Turkey
+    if Object is "Fish":
+        return Person.Fish
+    if Object is "Pigs":
+        return Person.Pigs
+    if Object is "Sheep":
+        return Person.Sheep
+    if Object is "Horses":
+        return Person.Horses
+def Loop():
+    if 1 is 1:
+        First_Trader = random.randint(0, players)
+        Second_Trader = random.randint(0, players)
+        #if First_Trader.Interest1 in Second_Trader.Disinterest1:
+            #Trade(Play[Second_Trader], Play[First_Trader], getItem(First_Trader.Interest1), random.randint(0, getItem(First_Trader.Interest1).left), 0)
+        Trade(Play[Second_Trader], Play[First_Trader], getItem(First_Trader.Interest1), random.randint(0, getItem(First_Trader.Interest1).left), 0)
+        Loop()
+#Trade(Play[0], Play[1], 1, "Gold", 1, "Silver")
+Loop()
