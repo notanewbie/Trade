@@ -703,215 +703,215 @@ def Trade(ThisPlayer, ThatPlayer, Giveamount, Giving, Getamount, Getting):
     #print ThisPlayer.name + " will now have " + str(Giveamount) + " " + Giving
     #print ThatPlayer.name + " will now have " + str(Getamount) + " " + Getting
     if Giving is "Silver":
-        ThisPlayer.Silver = ThisPlayer.Silver + Giveamount
-        ThatPlayer.Silver = ThatPlayer.Silver - Giveamount
-    if Getting is "Silver":
         ThisPlayer.Silver = ThisPlayer.Silver - Giveamount
         ThatPlayer.Silver = ThatPlayer.Silver + Giveamount
+    if Getting is "Silver":
+        ThisPlayer.Silver = ThisPlayer.Silver + Giveamount
+        ThatPlayer.Silver = ThatPlayer.Silver - Giveamount
     if Giving is "Bronze":
-        ThisPlayer.Bronze = ThisPlayer.Bronze + Giveamount
-        ThatPlayer.Bronze = ThatPlayer.Bronze - Giveamount
-    if Getting is "Bronze":
         ThisPlayer.Bronze = ThisPlayer.Bronze - Giveamount
         ThatPlayer.Bronze = ThatPlayer.Bronze + Giveamount
+    if Getting is "Bronze":
+        ThisPlayer.Bronze = ThisPlayer.Bronze + Giveamount
+        ThatPlayer.Bronze = ThatPlayer.Bronze - Giveamount
     if Giving is "Platinum":
-        ThisPlayer.Platinum = ThisPlayer.Platinum + Giveamount
-        ThatPlayer.Platinum = ThatPlayer.Platinum - Giveamount
-    if Getting is "Platinum":
         ThisPlayer.Platinum = ThisPlayer.Platinum - Giveamount
         ThatPlayer.Platinum = ThatPlayer.Platinum + Giveamount
+    if Getting is "Platinum":
+        ThisPlayer.Platinum = ThisPlayer.Platinum + Giveamount
+        ThatPlayer.Platinum = ThatPlayer.Platinum - Giveamount
     if Giving is "Uranium":
-        ThisPlayer.Uranium = ThisPlayer.Uranium + Giveamount
-        ThatPlayer.Uranium = ThatPlayer.Uranium - Giveamount
-    if Getting is "Uranium":
         ThisPlayer.Uranium = ThisPlayer.Uranium - Giveamount
         ThatPlayer.Uranium = ThatPlayer.Uranium + Giveamount
+    if Getting is "Uranium":
+        ThisPlayer.Uranium = ThisPlayer.Uranium + Giveamount
+        ThatPlayer.Uranium = ThatPlayer.Uranium - Giveamount
     if Giving is "Iron":
-        ThisPlayer.Iron = ThisPlayer.Iron + Giveamount
-        ThatPlayer.Iron = ThatPlayer.Iron - Giveamount
-    if Getting is "Iron":
         ThisPlayer.Iron = ThisPlayer.Iron - Giveamount
         ThatPlayer.Iron = ThatPlayer.Iron + Giveamount
+    if Getting is "Iron":
+        ThisPlayer.Iron = ThisPlayer.Iron + Giveamount
+        ThatPlayer.Iron = ThatPlayer.Iron - Giveamount
     if Giving is "Tin":
-        ThisPlayer.Tin = ThisPlayer.Tin + Giveamount
-        ThatPlayer.Tin = ThatPlayer.Tin - Giveamount
-    if Getting is "Tin":
         ThisPlayer.Tin = ThisPlayer.Tin - Giveamount
         ThatPlayer.Tin = ThatPlayer.Tin + Giveamount
+    if Getting is "Tin":
+        ThisPlayer.Tin = ThisPlayer.Tin + Giveamount
+        ThatPlayer.Tin = ThatPlayer.Tin - Giveamount
     if Giving is "Titanium":
-        ThisPlayer.Titanium = ThisPlayer.Titanium + Giveamount
-        ThatPlayer.Titanium = ThatPlayer.Titanium - Giveamount
-    if Getting is "Titanium":
         ThisPlayer.Titanium = ThisPlayer.Titanium - Giveamount
         ThatPlayer.Titanium = ThatPlayer.Titanium + Giveamount
+    if Getting is "Titanium":
+        ThisPlayer.Titanium = ThisPlayer.Titanium + Giveamount
+        ThatPlayer.Titanium = ThatPlayer.Titanium - Giveamount
     if Giving is "Vibranium":
-        ThisPlayer.Vibranium = ThisPlayer.Vibranium + Giveamount
-        ThatPlayer.Vibranium = ThatPlayer.Vibranium - Giveamount
-    if Getting is "Vibranium":
         ThisPlayer.Vibranium = ThisPlayer.Vibranium - Giveamount
         ThatPlayer.Vibranium = ThatPlayer.Vibranium + Giveamount
+    if Getting is "Vibranium":
+        ThisPlayer.Vibranium = ThisPlayer.Vibranium + Giveamount
+        ThatPlayer.Vibranium = ThatPlayer.Vibranium - Giveamount
     if Giving is "Ultanium":
-        ThisPlayer.Ultanium = ThisPlayer.Ultanium + Giveamount
-        ThatPlayer.Ultanium = ThatPlayer.Ultanium - Giveamount
-    if Getting is "Ultanium":
         ThisPlayer.Ultanium = ThisPlayer.Ultanium - Giveamount
         ThatPlayer.Ultanium = ThatPlayer.Ultanium + Giveamount
+    if Getting is "Ultanium":
+        ThisPlayer.Ultanium = ThisPlayer.Ultanium + Giveamount
+        ThatPlayer.Ultanium = ThatPlayer.Ultanium - Giveamount
     if Giving is "Bread":
-        ThisPlayer.Bread = ThisPlayer.Bread + Giveamount
-        ThatPlayer.Bread = ThatPlayer.Bread - Giveamount
-    if Getting is "Bread":
         ThisPlayer.Bread = ThisPlayer.Bread - Giveamount
         ThatPlayer.Bread = ThatPlayer.Bread + Giveamount
+    if Getting is "Bread":
+        ThisPlayer.Bread = ThisPlayer.Bread + Giveamount
+        ThatPlayer.Bread = ThatPlayer.Bread - Giveamount
     if Giving is "Sugar":
-        ThisPlayer.Sugar = ThisPlayer.Sugar + Giveamount
-        ThatPlayer.Sugar = ThatPlayer.Sugar - Giveamount
-    if Getting is "Sugar":
         ThisPlayer.Sugar = ThisPlayer.Sugar - Giveamount
         ThatPlayer.Sugar = ThatPlayer.Sugar + Giveamount
+    if Getting is "Sugar":
+        ThisPlayer.Sugar = ThisPlayer.Sugar + Giveamount
+        ThatPlayer.Sugar = ThatPlayer.Sugar - Giveamount
     if Giving is "Salt":
-        ThisPlayer.Salt = ThisPlayer.Salt + Giveamount
-        ThatPlayer.Salt = ThatPlayer.Salt - Giveamount
-    if Getting is "Salt":
         ThisPlayer.Salt = ThisPlayer.Salt - Giveamount
         ThatPlayer.Salt = ThatPlayer.Salt + Giveamount
+    if Getting is "Salt":
+        ThisPlayer.Salt = ThisPlayer.Salt + Giveamount
+        ThatPlayer.Salt = ThatPlayer.Salt - Giveamount
     if Giving is "Corn":
-        ThisPlayer.Corn = ThisPlayer.Corn + Giveamount
-        ThatPlayer.Corn = ThatPlayer.Corn - Giveamount
-    if Getting is "Corn":
         ThisPlayer.Corn = ThisPlayer.Corn - Giveamount
         ThatPlayer.Corn = ThatPlayer.Corn + Giveamount
+    if Getting is "Corn":
+        ThisPlayer.Corn = ThisPlayer.Corn + Giveamount
+        ThatPlayer.Corn = ThatPlayer.Corn - Giveamount
     if Giving is "Cocolate":
-        ThisPlayer.Cocolate = ThisPlayer.Cocolate + Giveamount
-        ThatPlayer.Cocolate = ThatPlayer.Cocolate - Giveamount
-    if Getting is "Cocolate":
         ThisPlayer.Cocolate = ThisPlayer.Cocolate - Giveamount
         ThatPlayer.Cocolate = ThatPlayer.Cocolate + Giveamount
+    if Getting is "Cocolate":
+        ThisPlayer.Cocolate = ThisPlayer.Cocolate + Giveamount
+        ThatPlayer.Cocolate = ThatPlayer.Cocolate - Giveamount
     if Giving is "Pistachios":
-        ThisPlayer.Pistachios = ThisPlayer.Pistachios + Giveamount
-        ThatPlayer.Pistachios = ThatPlayer.Pistachios - Giveamount
-    if Getting is "Pistachios":
         ThisPlayer.Pistachios = ThisPlayer.Pistachios - Giveamount
         ThatPlayer.Pistachios = ThatPlayer.Pistachios + Giveamount
+    if Getting is "Pistachios":
+        ThisPlayer.Pistachios = ThisPlayer.Pistachios + Giveamount
+        ThatPlayer.Pistachios = ThatPlayer.Pistachios - Giveamount
     if Giving is "Bacon":
-        ThisPlayer.Bacon = ThisPlayer.Bacon + Giveamount
-        ThatPlayer.Bacon = ThatPlayer.Bacon - Giveamount
-    if Getting is "Bacon":
         ThisPlayer.Bacon = ThisPlayer.Bacon - Giveamount
         ThatPlayer.Bacon = ThatPlayer.Bacon + Giveamount
+    if Getting is "Bacon":
+        ThisPlayer.Bacon = ThisPlayer.Bacon + Giveamount
+        ThatPlayer.Bacon = ThatPlayer.Bacon - Giveamount
     if Giving is "Oysters":
-        ThisPlayer.Oysters = ThisPlayer.Oysters + Giveamount
-        ThatPlayer.Oysters = ThatPlayer.Oysters - Giveamount
-    if Getting is "Oysters":
         ThisPlayer.Oysters = ThisPlayer.Oysters - Giveamount
         ThatPlayer.Oysters = ThatPlayer.Oysters + Giveamount
+    if Getting is "Oysters":
+        ThisPlayer.Oysters = ThisPlayer.Oysters + Giveamount
+        ThatPlayer.Oysters = ThatPlayer.Oysters - Giveamount
     if Giving is "Eggs":
-        ThisPlayer.Eggs = ThisPlayer.Eggs + Giveamount
-        ThatPlayer.Eggs = ThatPlayer.Eggs - Giveamount
-    if Getting is "Eggs":
         ThisPlayer.Eggs = ThisPlayer.Eggs - Giveamount
         ThatPlayer.Eggs = ThatPlayer.Eggs + Giveamount
+    if Getting is "Eggs":
+        ThisPlayer.Eggs = ThisPlayer.Eggs + Giveamount
+        ThatPlayer.Eggs = ThatPlayer.Eggs - Giveamount
     if Giving is "Beef":
-        ThisPlayer.Beef = ThisPlayer.Beef + Giveamount
-        ThatPlayer.Beef = ThatPlayer.Beef - Giveamount
-    if Getting is "Beef":
         ThisPlayer.Beef = ThisPlayer.Beef - Giveamount
         ThatPlayer.Beef = ThatPlayer.Beef + Giveamount
+    if Getting is "Beef":
+        ThisPlayer.Beef = ThisPlayer.Beef + Giveamount
+        ThatPlayer.Beef = ThatPlayer.Beef - Giveamount
     if Giving is "Cherries":
-        ThisPlayer.Cherries = ThisPlayer.Cherries + Giveamount
-        ThatPlayer.Cherries = ThatPlayer.Cherries - Giveamount
-    if Getting is "Cherries":
         ThisPlayer.Cherries = ThisPlayer.Cherries - Giveamount
         ThatPlayer.Cherries = ThatPlayer.Cherries + Giveamount
+    if Getting is "Cherries":
+        ThisPlayer.Cherries = ThisPlayer.Cherries + Giveamount
+        ThatPlayer.Cherries = ThatPlayer.Cherries - Giveamount
     if Giving is "Rubies":
-        ThisPlayer.Rubies = ThisPlayer.Rubies + Giveamount
-        ThatPlayer.Rubies = ThatPlayer.Rubies - Giveamount
-    if Getting is "Rubies":
         ThisPlayer.Rubies = ThisPlayer.Rubies - Giveamount
         ThatPlayer.Rubies = ThatPlayer.Rubies + Giveamount
+    if Getting is "Rubies":
+        ThisPlayer.Rubies = ThisPlayer.Rubies + Giveamount
+        ThatPlayer.Rubies = ThatPlayer.Rubies - Giveamount
     if Giving is "Diamonds":
-        ThisPlayer.Diamonds = ThisPlayer.Diamonds + Giveamount
-        ThatPlayer.Diamonds = ThatPlayer.Diamonds - Giveamount
-    if Getting is "Diamonds":
         ThisPlayer.Diamonds = ThisPlayer.Diamonds - Giveamount
         ThatPlayer.Diamonds = ThatPlayer.Diamonds + Giveamount
+    if Getting is "Diamonds":
+        ThisPlayer.Diamonds = ThisPlayer.Diamonds + Giveamount
+        ThatPlayer.Diamonds = ThatPlayer.Diamonds - Giveamount
     if Giving is "Sapphires":
-        ThisPlayer.Sapphires = ThisPlayer.Sapphires + Giveamount
-        ThatPlayer.Sapphires = ThatPlayer.Sapphires - Giveamount
-    if Getting is "Sapphires":
         ThisPlayer.Sapphires = ThisPlayer.Sapphires - Giveamount
         ThatPlayer.Sapphires = ThatPlayer.Sapphires + Giveamount
+    if Getting is "Sapphires":
+        ThisPlayer.Sapphires = ThisPlayer.Sapphires + Giveamount
+        ThatPlayer.Sapphires = ThatPlayer.Sapphires - Giveamount
     if Giving is "Admantium":
-        ThisPlayer.Admantium = ThisPlayer.Admantium + Giveamount
-        ThatPlayer.Admantium = ThatPlayer.Admantium - Giveamount
-    if Getting is "Admantium":
         ThisPlayer.Admantium = ThisPlayer.Admantium - Giveamount
         ThatPlayer.Admantium = ThatPlayer.Admantium + Giveamount
+    if Getting is "Admantium":
+        ThisPlayer.Admantium = ThisPlayer.Admantium + Giveamount
+        ThatPlayer.Admantium = ThatPlayer.Admantium - Giveamount
     if Giving is "Blackberries":
-        ThisPlayer.Blackberries = ThisPlayer.Blackberries + Giveamount
-        ThatPlayer.Blackberries = ThatPlayer.Blackberries - Giveamount
-    if Getting is "Blackberries":
         ThisPlayer.Blackberries = ThisPlayer.Blackberries - Giveamount
         ThatPlayer.Blackberries = ThatPlayer.Blackberries + Giveamount
+    if Getting is "Blackberries":
+        ThisPlayer.Blackberries = ThisPlayer.Blackberries + Giveamount
+        ThatPlayer.Blackberries = ThatPlayer.Blackberries - Giveamount
     if Giving is "Kiwi":
-        ThisPlayer.Kiwi = ThisPlayer.Kiwi + Giveamount
-        ThatPlayer.Kiwi = ThatPlayer.Kiwi - Giveamount
-    if Getting is "Kiwi":
         ThisPlayer.Kiwi = ThisPlayer.Kiwi - Giveamount
         ThatPlayer.Kiwi = ThatPlayer.Kiwi + Giveamount
+    if Getting is "Kiwi":
+        ThisPlayer.Kiwi = ThisPlayer.Kiwi + Giveamount
+        ThatPlayer.Kiwi = ThatPlayer.Kiwi - Giveamount
     if Giving is "Strawberries":
-        ThisPlayer.Strawberries = ThisPlayer.Strawberries + Giveamount
-        ThatPlayer.Strawberries = ThatPlayer.Strawberries - Giveamount
-    if Getting is "Strawberries":
         ThisPlayer.Strawberries = ThisPlayer.Strawberries - Giveamount
         ThatPlayer.Strawberries = ThatPlayer.Strawberries + Giveamount
+    if Getting is "Strawberries":
+        ThisPlayer.Strawberries = ThisPlayer.Strawberries + Giveamount
+        ThatPlayer.Strawberries = ThatPlayer.Strawberries - Giveamount
     if Giving is "Wood":
-        ThisPlayer.Wood = ThisPlayer.Wood + Giveamount
-        ThatPlayer.Wood = ThatPlayer.Wood - Giveamount
-    if Getting is "Wood":
         ThisPlayer.Wood = ThisPlayer.Wood - Giveamount
         ThatPlayer.Wood = ThatPlayer.Wood + Giveamount
+    if Getting is "Wood":
+        ThisPlayer.Wood = ThisPlayer.Wood + Giveamount
+        ThatPlayer.Wood = ThatPlayer.Wood - Giveamount
     if Giving is "Cows":
-        ThisPlayer.Cows = ThisPlayer.Cows + Giveamount
-        ThatPlayer.Cows = ThatPlayer.Cows - Giveamount
-    if Getting is "Cows":
         ThisPlayer.Cows = ThisPlayer.Cows - Giveamount
-        ThatPlayer.Wood = ThatPlayer.Cows + Giveamount
+        ThatPlayer.Cows = ThatPlayer.Cows + Giveamount
+    if Getting is "Cows":
+        ThisPlayer.Cows = ThisPlayer.Cows + Giveamount
+        ThatPlayer.Wood = ThatPlayer.Cows - Giveamount
     if Giving is "Chicken":
-        ThisPlayer.Chicken = ThisPlayer.Chicken + Giveamount
-        ThatPlayer.Chicken = ThatPlayer.Chicken - Giveamount
-    if Getting is "Chicken":
         ThisPlayer.Chicken = ThisPlayer.Chicken - Giveamount
         ThatPlayer.Chicken = ThatPlayer.Chicken + Giveamount
+    if Getting is "Chicken":
+        ThisPlayer.Chicken = ThisPlayer.Chicken + Giveamount
+        ThatPlayer.Chicken = ThatPlayer.Chicken - Giveamount
     if Giving is "Turkey":
-        ThisPlayer.Turkey = ThisPlayer.Turkey + Giveamount
-        ThatPlayer.Turkey = ThatPlayer.Turkey - Giveamount
-    if Getting is "Turkey":
         ThisPlayer.Turkey = ThisPlayer.Turkey - Giveamount
         ThatPlayer.Turkey = ThatPlayer.Turkey + Giveamount
+    if Getting is "Turkey":
+        ThisPlayer.Turkey = ThisPlayer.Turkey + Giveamount
+        ThatPlayer.Turkey = ThatPlayer.Turkey - Giveamount
     if Giving is "Fish":
-        ThisPlayer.Fish = ThisPlayer.Fish + Giveamount
-        ThatPlayer.Fish = ThatPlayer.Fish - Giveamount
-    if Getting is "Fish":
         ThisPlayer.Fish = ThisPlayer.Fish - Giveamount
         ThatPlayer.Fish = ThatPlayer.Fish + Giveamount
+    if Getting is "Fish":
+        ThisPlayer.Fish = ThisPlayer.Fish + Giveamount
+        ThatPlayer.Fish = ThatPlayer.Fish - Giveamount
     if Giving is "Pigs":
-        ThisPlayer.Pigs = ThisPlayer.Pigs + Giveamount
-        ThatPlayer.Pigs = ThatPlayer.Pigs - Giveamount
-    if Getting is "Pigs":
         ThisPlayer.Pigs = ThisPlayer.Pigs - Giveamount
         ThatPlayer.Pigs = ThatPlayer.Pigs + Giveamount
+    if Getting is "Pigs":
+        ThisPlayer.Pigs = ThisPlayer.Pigs + Giveamount
+        ThatPlayer.Pigs = ThatPlayer.Pigs - Giveamount
     if Giving is "Sheep":
-        ThisPlayer.Sheep = ThisPlayer.Sheep + Giveamount
-        ThatPlayer.Sheep = ThatPlayer.Sheep - Giveamount
-    if Getting is "Sheep":
         ThisPlayer.Sheep = ThisPlayer.Sheep - Giveamount
         ThatPlayer.Sheep = ThatPlayer.Sheep + Giveamount
+    if Getting is "Sheep":
+        ThisPlayer.Sheep = ThisPlayer.Sheep + Giveamount
+        ThatPlayer.Sheep = ThatPlayer.Sheep - Giveamount
     if Giving is "Horses":
-        ThisPlayer.Horses = ThisPlayer.Horses + Giveamount
-        ThatPlayer.Horses = ThatPlayer.Horses - Giveamount
-    if Getting is "Horses":
         ThisPlayer.Horses = ThisPlayer.Horses - Giveamount
         ThatPlayer.Horses = ThatPlayer.Horses + Giveamount
+    if Getting is "Horses":
+        ThisPlayer.Horses = ThisPlayer.Horses + Giveamount
+        ThatPlayer.Horses = ThatPlayer.Horses - Giveamount
     listPlayers()
 def getItem(Person, Object):
     if Object is "Gold":
@@ -1018,6 +1018,6 @@ def Loop():
         if "no" in go:
             print "The deal between " + Play[Second_Trader_int].name + " and " + Play[First_Trader_int].name + " fell through."
             time.sleep(2)
-        raw_input("Press Enter to continue.")
+        #raw_input("Press Enter to continue.")
 #Trade(Play[0], Play[1], 1, "Gold", 1, "Silver")
 Loop()
