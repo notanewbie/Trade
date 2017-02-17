@@ -1,5 +1,6 @@
 import math
 import random
+import time
 class Player(object):
     name = ""
     Gold = 0
@@ -688,13 +689,19 @@ for item in ListOfPlayers:
     i = i + 1
 print You.Name + ":"
 print "Gold: " + str(You.Gold) + "; Silver: " + str(You.Silver) + "; Bronze: " + str(You.Bronze) + "; Platinum: " + str(You.Platinum) + "; Uranium: " + str(You.Uranium) + "; Iron: " + str(You.Iron) + "; Tin: " + str(You.Tin) + "; Titanium: " + str(You.Titanium) + "; Vibranium: " + str(You.Vibranium) + "; Ultanium: " + str(You.Ultanium) + "; Bread: " + str(You.Bread) + "; Sugar: " + str(You.Sugar) + "; Salt: " + str(You.Salt) + "; Corn: " + str(You.Corn) + "; Chocolate: " + str(You.Chocolate) + "; Pistachios: " + str(You.Pistachios) + "; Bacon: " + str(You.Bacon) + "; Oysters: " + str(You.Oysters) + "; Eggs: " + str(You.Eggs) + "; Beef: " + str(You.Beef) + "; Cherries: " + str(You.Cherries) + "; Rubies: " + str(You.Rubies) + "; Diamonds: " + str(You.Diamonds) + "; Sapphires: " + str(You.Sapphires) + "; Admantium: " + str(You.Admantium) + "; Blackberries: " + str(You.Blackberries) + "; Kiwi: " + str(You.Kiwi) + "; Strawberries: " + str(You.Strawberries) + "; Wood: " + str(You.Wood) + "; Cows: " + str(You.Cows) + "; Chicken: " + str(You.Chicken) + "; Turkey: " + str(You.Turkey) + "; Fish: " + str(You.Fish) + "; Pigs: " + str(You.Pigs) + "; Sheep: " + str(You.Sheep) + "; Horses: " + str(You.Horses)
-i = 0
-for item in ListOfPlayers:
-    print Play[i].name + ":"
-    print "Gold: " + str(Play[i].Gold) + "; Silver: " + str(Play[i].Silver) + "; Bronze: " + str(Play[i].Bronze) + "; Platinum: " + str(Play[i].Platinum) + "; Uranium: " + str(Play[i].Uranium) + "; Iron: " + str(Play[i].Iron) + "; Tin: " + str(Play[i].Tin) + "; Titanium: " + str(Play[i].Titanium) + "; Vibranium: " + str(Play[i].Vibranium) + "; Ultanium: " + str(Play[i].Ultanium) + "; Bread: " + str(Play[i].Bread) + "; Sugar: " + str(Play[i].Sugar) + "; Salt: " + str(Play[i].Salt) + "; Corn: " + str(Play[i].Corn) + "; Chocolate: " + str(Play[i].Chocolate) + "; Pistachios: " + str(Play[i].Pistachios) + "; Bacon: " + str(Play[i].Bacon) + "; Oysters: " + str(Play[i].Oysters) + "; Eggs: " + str(Play[i].Eggs) + "; Beef: " + str(Play[i].Beef) + "; Cherries: " + str(Play[i].Cherries) + "; Rubies: " + str(Play[i].Rubies) + "; Diamonds: " + str(Play[i].Diamonds) + "; Sapphires: " + str(Play[i].Sapphires) + "; Admantium: " + str(Play[i].Admantium) + "; Blackberries: " + str(Play[i].Blackberries) + "; Kiwi: " + str(Play[i].Kiwi) + "; Strawberries: " + str(Play[i].Strawberries) + "; Wood: " + str(Play[i].Wood) + "; Cows: " + str(Play[i].Cows) + "; Chicken: " + str(Play[i].Chicken) + "; Turkey: " + str(Play[i].Turkey) + "; Fish: " + str(Play[i].Fish) + "; Pigs: " + str(Play[i].Pigs) + "; Sheep: " + str(Play[i].Sheep) + "; Horses: " + str(Play[i].Horses)
-    i = i + 1
+def listPlayers():
+    i = 0
+    for item in ListOfPlayers:
+        print Play[i].name + ":"
+        print "Gold: " + str(Play[i].Gold) + "; Silver: " + str(Play[i].Silver) + "; Bronze: " + str(Play[i].Bronze) + "; Platinum: " + str(Play[i].Platinum) + "; Uranium: " + str(Play[i].Uranium) + "; Iron: " + str(Play[i].Iron) + "; Tin: " + str(Play[i].Tin) + "; Titanium: " + str(Play[i].Titanium) + "; Vibranium: " + str(Play[i].Vibranium) + "; Ultanium: " + str(Play[i].Ultanium) + "; Bread: " + str(Play[i].Bread) + "; Sugar: " + str(Play[i].Sugar) + "; Salt: " + str(Play[i].Salt) + "; Corn: " + str(Play[i].Corn) + "; Chocolate: " + str(Play[i].Chocolate) + "; Pistachios: " + str(Play[i].Pistachios) + "; Bacon: " + str(Play[i].Bacon) + "; Oysters: " + str(Play[i].Oysters) + "; Eggs: " + str(Play[i].Eggs) + "; Beef: " + str(Play[i].Beef) + "; Cherries: " + str(Play[i].Cherries) + "; Rubies: " + str(Play[i].Rubies) + "; Diamonds: " + str(Play[i].Diamonds) + "; Sapphires: " + str(Play[i].Sapphires) + "; Admantium: " + str(Play[i].Admantium) + "; Blackberries: " + str(Play[i].Blackberries) + "; Kiwi: " + str(Play[i].Kiwi) + "; Strawberries: " + str(Play[i].Strawberries) + "; Wood: " + str(Play[i].Wood) + "; Cows: " + str(Play[i].Cows) + "; Chicken: " + str(Play[i].Chicken) + "; Turkey: " + str(Play[i].Turkey) + "; Fish: " + str(Play[i].Fish) + "; Pigs: " + str(Play[i].Pigs) + "; Sheep: " + str(Play[i].Sheep) + "; Horses: " + str(Play[i].Horses)
+        i = i + 1
+        time.sleep(2)
+listPlayers()
 def Trade(ThisPlayer, ThatPlayer, Giveamount, Giving, Getamount, Getting):
-    print ThisPlayer.name + " is giving " + ThatPlayer.name + " " + str(Giveamount) + " " + Giving + "."
+    print ThisPlayer.name + " is giving " + ThatPlayer.name + " " + str(Giveamount) + " " + Giving + " for " + str(Getamount) + " " + Getting + "."
+    time.sleep(5)
+    #print ThisPlayer.name + " will now have " + str(Giveamount) + " " + Giving
+    #print ThatPlayer.name + " will now have " + str(Getamount) + " " + Getting
     if Giving is "Silver":
         ThisPlayer.Silver = ThisPlayer.Silver + Giveamount
         ThatPlayer.Silver = ThatPlayer.Silver - Giveamount
@@ -905,6 +912,7 @@ def Trade(ThisPlayer, ThatPlayer, Giveamount, Giving, Getamount, Getting):
     if Getting is "Horses":
         ThisPlayer.Horses = ThisPlayer.Horses - Giveamount
         ThatPlayer.Horses = ThatPlayer.Horses + Giveamount
+    listPlayers()
 def getItem(Person, Object):
     if Object is "Gold":
         return Person.Gold
@@ -980,8 +988,9 @@ def getItem(Person, Object):
         return Person.Horses
 playas = players - 1
 def Loop():
-    if 1 is 1:
+    while 1 is 1:
         First_Trader_int = random.randint(0, playas)
+        print First_Trader_int
         if First_Trader_int > 0:
             First_Trader = Play[First_Trader_int]
         else:
@@ -993,7 +1002,22 @@ def Loop():
             Second_Trader = Play[0]
         #if First_Trader.Interest1 in Second_Trader.Disinterest1:
             #Trade(Play[Second_Trader], Play[First_Trader], getItem(First_Trader.Interest1), random.randint(0, getItem(First_Trader.Interest1).left), 0)
-        Trade(Play[Second_Trader_int], Play[First_Trader_int], random.randint(0, getItem(First_Trader, First_Trader.Interest1)), First_Trader.Interest1, random.randint(0, getItem(Second_Trader, Second_Trader.Disinterest1)), Second_Trader.Disinterest1)
-        Loop()
+        go = "yes"
+        if First_Trader.Interest1 < 1:
+            go = "no"
+        if Second_Trader.Disinterest1 < 1:
+            go = "no"
+        if getItem(First_Trader, First_Trader.Interest1) < 1:
+            go = "no"
+        if getItem(Second_Trader, Second_Trader.Disinterest1) < 1:
+            go = "no"
+        if "yes" in go:
+            print "The deal between " + Play[Second_Trader_int].name + " and " + Play[First_Trader_int].name + " is on."
+            time.sleep(3)
+            Trade(Play[Second_Trader_int], Play[First_Trader_int], random.randint(0, getItem(First_Trader, First_Trader.Interest1)), First_Trader.Interest1, random.randint(0, getItem(Second_Trader, Second_Trader.Disinterest1)), Second_Trader.Disinterest1)
+        if "no" in go:
+            print "The deal between " + Play[Second_Trader_int].name + " and " + Play[First_Trader_int].name + " fell through."
+            time.sleep(2)
+        raw_input("Press Enter to continue.")
 #Trade(Play[0], Play[1], 1, "Gold", 1, "Silver")
 Loop()
