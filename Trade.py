@@ -244,6 +244,7 @@ for item in range(response):
     ListOfPlayers.append("Player " + str(players))
     print ListOfPlayers
     Play.append(Player())
+print str(players) + "Players."
 print "Distributing Gold..."
 #Name Players
 i = 0
@@ -977,13 +978,22 @@ def getItem(Person, Object):
         return Person.Sheep
     if Object is "Horses":
         return Person.Horses
+playas = players - 1
 def Loop():
     if 1 is 1:
-        First_Trader = random.randint(0, players)
-        Second_Trader = random.randint(0, players)
+        First_Trader_int = random.randint(0, playas)
+        if First_Trader_int > 0:
+            First_Trader = Play[First_Trader_int]
+        else:
+            First_Trader = Play[0]
+        Second_Trader_int = random.randint(0, playas)
+        if Second_Trader_int > 0:
+            Second_Trader = Play[Second_Trader_int]
+        else:
+            Second_Trader = Play[0]
         #if First_Trader.Interest1 in Second_Trader.Disinterest1:
             #Trade(Play[Second_Trader], Play[First_Trader], getItem(First_Trader.Interest1), random.randint(0, getItem(First_Trader.Interest1).left), 0)
-        Trade(Play[Second_Trader], Play[First_Trader], getItem(First_Trader.Interest1), random.randint(0, getItem(First_Trader.Interest1).left), 0)
+        Trade(Play[Second_Trader_int], Play[First_Trader_int], random.randint(0, getItem(First_Trader, First_Trader.Interest1)), First_Trader.Interest1, random.randint(0, getItem(Second_Trader, Second_Trader.Disinterest1)), Second_Trader.Disinterest1)
         Loop()
 #Trade(Play[0], Play[1], 1, "Gold", 1, "Silver")
 Loop()
