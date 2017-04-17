@@ -3,1021 +3,498 @@ import random
 import time
 class Player(object):
     name = ""
+    wants = ""
+    hates = ""
+    worth = float(0)
+    oldworth = float(0)
     Gold = 0
     Silver = 0
     Bronze = 0
     Platinum = 0
-    Uranium = 0
-    Iron = 0
-    Tin = 0
-    Titanium = 0
-    Vibranium = 0
-    Ultanium = 0
-    Bread = 0
-    Sugar = 0
-    Salt = 0
-    Corn = 0
-    Chocolate = 0
-    Pistachios = 0
-    Bacon = 0
-    Oysters = 0
-    Eggs = 0
-    Beef = 0
-    Cherries = 0
-    Rubies = 0
-    Diamonds = 0
-    Sapphires = 0
-    Admantium = 0
-    Blackberries = 0
-    Kiwi = 0
-    Strawberries = 0
-    Wood = 0
-    Cows = 0
-    Chicken = 0
-    Turkey = 0
-    Fish = 0
-    Pigs = 0
-    Sheep = 0
-    Horses = 0
-    Interest1 = ""
-    Interest2 = ""
-    Interest3 = ""
-    Disinterest1 = ""
-    Disinterest2 = ""
-    Disinterest3 = ""
 class Material(object):
     Total = 0
     Left = 0
     Taken = 0
     Name = ""
-Silver = Material()
-Silver.Total = 35
-Silver.Left = 35
-Silver.Name = "Silver"
-
+    Worth = 0
 Gold = Material()
 Gold.Total = 20
 Gold.Left = 20
+Gold.Worth = .05
 Gold.Name = "Gold"
+
+Silver = Material()
+Silver.Total = 35
+Silver.Left = 35
+Silver.Worth = .03
+Silver.Name = "Silver"
 
 Bronze = Material()
 Bronze.Total = 50
 Bronze.Left = 50
+Bronze.Worth = .02
 Bronze.Name = "Bronze"
 
 Platinum = Material()
 Platinum.Total = 30
 Platinum.Left = 30
+Platinum.Worth = .03
 Platinum.Name = "Platinum"
 
-Uranium = Material()
-Uranium.Total = 10
-Uranium.Left = 10
-Uranium.Name = "Uranium"
+Materials = [Gold, Silver, Bronze, Platinum]
 
-Iron = Material()
-Iron.Total = 75
-Iron.Left = 75
-Iron.Name = "Iron"
+Player1 = Player()
+Player1.Name = "Player1"
 
-Tin = Material()
-Tin.Total = 99
-Tin.Left = 99
-Tin.Name = "Tin"
+Player2 = Player()
+Player2.Name = "Player2"
 
-Titanium = Material()
-Titanium.Total = 5
-Titanium.Left = 5
-Titanium.Name = "Titanium"
+Player3 = Player()
+Player3.Name = "Player3"
 
-Vibranium = Material()
-Vibranium.Total = 20
-Vibranium.Left = 20
-Vibranium.Name = "Vibranium"
+Player4 = Player()
+Player4.Name = "Player4"
 
-Ultanium = Material()
-Ultanium.Total = 1
-Ultanium.Left = 1
-Ultanium.Name = "Ultanium"
-
-Bread = Material()
-Bread.Total = 80
-Bread.Left = 80
-Bread.Name = "Bread"
-
-Sugar = Material()
-Sugar.Total = 60
-Sugar.Left = 60
-
-Salt = Material()
-Salt.Total = 40
-Salt.Left = 40
-Salt.Name = "Salt"
-
-Corn = Material()
-Corn.Total = 80
-Corn.Left = 80
-Corn.Name = "Corn"
-
-Chocolate = Material()
-Chocolate.Total = 55
-Chocolate.Left = 55
-Chocolate.Name = "Chocolate"
-
-Pistachios = Material()
-Pistachios.Total = 45
-Pistachios.Left = 45
-Pistachios.Name = "Pistachios"
-
-Bacon = Material()
-Bacon.Total = 85
-Bacon.Left = 85
-Bacon.Name = "Bacon"
-
-Oysters = Material()
-Oysters.Total = 25
-Oysters.Left = 25
-Oysters.Name = "Oysters"
-
-Eggs = Material()
-Eggs.Total = 99
-Eggs.Left = 99
-Eggs.Name = "Eggs"
-
-Beef = Material()
-Beef.Total = 80
-Beef.Left = 80
-Beef.Name = "Beef"
-
-Cherries = Material()
-Cherries.Total = 70
-Cherries.Left = 70
-Cherries.Name = "Cherries"
-
-Rubies = Material()
-Rubies.Total = 15
-Rubies.Left = 15
-Rubies.Name = "Rubies"
-
-Diamonds = Material()
-Diamonds.Total = 30
-Diamonds.Left = 30
-Diamonds.Name = "Diamonds"
-
-Sapphires = Material()
-Sapphires.Total = 5
-Sapphires.Left = 5
-Sapphires.Name = "Sapphires"
-
-Admantium = Material()
-Admantium.Total = 3
-Admantium.Left = 3
-Admantium.Name = "Admantium"
-
-Blackberries = Material()
-Blackberries.Total = 30
-Blackberries.Left = 30
-Blackberries.Name = "Blackberries"
-
-Kiwi = Material()
-Kiwi.Total = 15
-Kiwi.Left = 15
-Kiwi.Name = "Kiwi"
-
-Strawberries = Material()
-Strawberries.Total = 50
-Strawberries.Left = 50
-Strawberries.Name = "Strawberries"
-
-Wood = Material()
-Wood.Total = 50
-Wood.Left = 50
-Wood.Name = "Wood"
-
-Cows = Material()
-Cows.Total = 85
-Cows.Left = 85
-Cows.Name = "Cows"
-
-Chicken = Material()
-Chicken.Total = 99
-Chicken.Left = 99
-Chicken.Name = "Chicken"
-
-Turkey = Material()
-Turkey.Total = 99
-Turkey.Left = 99
-Turkey.Name = "Turkey"
-
-Fish = Material()
-Fish.Total = 99
-Fish.Left = 99
-Fish.Name = "Fish"
-
-Pigs = Material()
-Pigs.Total = 70
-Pigs.Left = 70
-Pigs.Name = "Pigs"
-
-Sheep = Material()
-Sheep.Total = 99
-Sheep.Left = 99
-Sheep.Name = "Sheep"
-
-Horses = Material()
-Horses.Total = 70
-Horses.Left = 70
-Horses.Name = "Horses"
-
-ListOfMaterials = [Gold, Silver, Bronze, Platinum, Uranium, Iron, Tin, Titanium, Vibranium, Ultanium, Bread, Sugar, Salt, Corn, Chocolate, Pistachios, Bacon, Oysters, Eggs, Beef, Cherries, Rubies, Diamonds, Sapphires, Admantium, Blackberries, Kiwi, Strawberries, Wood, Cows, Chicken, Turkey, Fish, Pigs, Sheep, Horses]
 You = Player()
-def IsWorth(Subject):
-    return 1/float(Subject)
-#print IsWorth(Sheep.Left)
-#print IsWorth(Uranium.Total)
-response = int(raw_input("How many players do you want to play against?"))
-players = 0
-ListOfPlayers = []
-Play = []
-for item in range(response):
-    players = players + 1
-    response = response - 1
-    ListOfPlayers.append("Player " + str(players))
-    print ListOfPlayers
-    Play.append(Player())
-print str(players) + "Players."
-print "Distributing Gold..."
-#Name Players
-i = 0
-Mats = 0
-for item in ListOfMaterials:
-        Mats = Mats + 1
-Mats = Mats - 1
-for object in ListOfPlayers:
-    Play[i].name = "Player " + str(i + 1)
-    Play[i].Interest1 = ListOfMaterials[random.randint(0, Mats)].Name
-    Play[i].Interest2 = ListOfMaterials[random.randint(0, Mats)].Name
-    Play[i].Interest3 = ListOfMaterials[random.randint(0, Mats)].Name
-    print Play[i].name + " wants " + Play[i].Interest1 + ", " + Play[i].Interest2 + " and " + Play[i].Interest3 + "."
-    Play[i].Disinterest1 = ListOfMaterials[random.randint(0, Mats)].Name
-    Play[i].Disinterest2 = ListOfMaterials[random.randint(0, Mats)].Name
-    Play[i].Disinterest3 = ListOfMaterials[random.randint(0, Mats)].Name
-    print Play[i].name + " doesn't want " + Play[i].Disinterest1 + ", " + Play[i].Disinterest2 + " and " + Play[i].Disinterest3 + "."
-    print ""
-    i = i + 1
-i = 0
-#Dole Out (Function)
-def Dole(Thing, i):
-    print "_-=-_"
-    print "Dole() Running."
-    #print "Doling out " + Thing.Name
-    Max = int(Thing.Left * .5)
-    if i < 3:
-        print "For player " + str(i) + " I'm lowering the maximum ammount he can get from " + str(Thing.Left) + " to " + str(Max)
-        Thing.Taken = random.randint(0, Max);
-        print "See, I only took " + str(Thing.Taken)
-        #Play[i].Gold = Thing.Taken
-        Thing.Left = Thing.Left - Thing.Taken
-    if i > 2:
-        Thing.Taken = Thing.Left - random.randint(0, Thing.Left);
-        #Play[i].Gold = Thing.Taken
-        Thing.Left = Thing.Left - Thing.Taken
-    #print "Took " + str(Taken) + " away. Now there's " + str(GoldLeft) + " left."
-    #print Play[i].name + " has " + str(Play[i].Gold) + " " + Thing.Name
-    #print "There is " + str(Thing.Left) + " " + Thing.Name + " left."
-    print "Dole() finished running."
-    print "_-=-_"
-    return Thing
-
-#Dole Out Gold
-You.Name = str(raw_input("What's your name?"))
-i = 0
-Gold = Dole(Gold, i)
-You.Gold = Gold.Taken
-print You.Name + " has " + str(You.Gold) + " Gold."
-print "There is " + str(Gold.Left) + " Gold left."
-for item in ListOfPlayers:
-    Gold = Dole(Gold, i)
-    Play[i].Gold = Gold.Taken
-    print Play[i].name + " has " + str(Play[i].Gold) + " Gold."
-    print "There is " + str(Gold.Left) + " Gold left."
-    i = i + 1
-i = 0
-Silver = Dole(Silver, i)
-You.Silver = Silver.Taken
-print You.Name + " has " + str(You.Silver) + " Silver."
-print "There is " + str(Silver.Left) + " Silver left."
-for item in ListOfPlayers:
-    Silver = Dole(Silver, i)
-    Play[i].Silver = Silver.Taken
-    print Play[i].name + " has " + str(Play[i].Silver) + " Silver."
-    print "There is " + str(Silver.Left) + " Silver left."
-    i = i + 1
-i = 0
-Bronze = Dole(Bronze, i)
-You.Bronze = Bronze.Taken
-print You.Name + " has " + str(You.Bronze) + " Bronze."
-print "There is " + str(Bronze.Left) + " Bronze left."
-for item in ListOfPlayers:
-    Bronze = Dole(Bronze, i)
-    Play[i].Bronze = Bronze.Taken
-    print Play[i].name + " has " + str(Play[i].Bronze) + " Bronze."
-    print "There is " + str(Bronze.Left) + " Bronze left."
-    i = i + 1
-i = 0
-Platinum = Dole(Platinum, i)
-You.Platinum = Platinum.Taken
-print You.Name + " has " + str(You.Platinum) + " Platinum."
-print "There is " + str(Platinum.Left) + " Platinum left."
-for item in ListOfPlayers:
-    Platinum = Dole(Platinum, i)
-    Play[i].Platinum = Platinum.Taken
-    print Play[i].name + " has " + str(Play[i].Platinum) + " Platinum."
-    print "There is " + str(Platinum.Left) + " Platinum left."
-    i = i + 1
-i = 0
-Uranium = Dole(Uranium, i)
-You.Uranium = Uranium.Taken
-print You.Name + " has " + str(You.Uranium) + " Uranium."
-print "There is " + str(Uranium.Left) + " Uranium left."
-for item in ListOfPlayers:
-    Uranium = Dole(Uranium, i)
-    Play[i].Uranium = Uranium.Taken
-    print Play[i].name + " has " + str(Play[i].Uranium) + " Uranium."
-    print "There is " + str(Uranium.Left) + " Uranium left."
-    i = i + 1
-i = 0
-Iron = Dole(Iron, i)
-You.Iron = Iron.Taken
-print You.Name + " has " + str(You.Iron) + " Iron."
-print "There is " + str(Iron.Left) + " Iron left."
-for item in ListOfPlayers:
-    Iron = Dole(Iron, i)
-    Play[i].Iron = Iron.Taken
-    print Play[i].name + " has " + str(Play[i].Iron) + " Iron."
-    print "There is " + str(Iron.Left) + " Iron left."
-    i = i + 1
-i = 0
-Tin = Dole(Tin, i)
-You.Tin = Tin.Taken
-print You.Name + " has " + str(You.Tin) + " Tin."
-print "There is " + str(Tin.Left) + " Tin left."
-for item in ListOfPlayers:
-    Tin = Dole(Tin, i)
-    Play[i].Tin = Tin.Taken
-    print Play[i].name + " has " + str(Play[i].Tin) + " Tin."
-    print "There is " + str(Tin.Left) + " Tin left."
-    i = i + 1
-i = 0
-Titanium = Dole(Titanium, i)
-You.Titanium = Titanium.Taken
-print You.Name + " has " + str(You.Titanium) + " Titanium."
-print "There is " + str(Titanium.Left) + " Titanium left."
-for item in ListOfPlayers:
-    Titanium = Dole(Titanium, i)
-    Play[i].Titanium = Titanium.Taken
-    print Play[i].name + " has " + str(Play[i].Titanium) + " Titanium."
-    print "There is " + str(Titanium.Left) + " Titanium left."
-    i = i + 1
-i = 0
-Vibranium = Dole(Vibranium, i)
-You.Vibranium = Vibranium.Taken
-print You.Name + " has " + str(You.Vibranium) + " Vibranium."
-print "There is " + str(Vibranium.Left) + " Vibranium left."
-for item in ListOfPlayers:
-    Vibranium = Dole(Vibranium, i)
-    Play[i].Vibranium = Vibranium.Taken
-    print Play[i].name + " has " + str(Play[i].Vibranium) + " Vibranium."
-    print "There is " + str(Vibranium.Left) + " Vibranium left."
-    i = i + 1
-i = 0
-Ultanium = Dole(Ultanium, i)
-You.Ultanium = Ultanium.Taken
-print You.Name + " has " + str(You.Ultanium) + " Ultanium."
-print "There is " + str(Ultanium.Left) + " Ultanium left."
-for item in ListOfPlayers:
-    Ultanium = Dole(Ultanium, i)
-    Play[i].Ultanium = Ultanium.Taken
-    print Play[i].name + " has " + str(Play[i].Ultanium) + " Ultanium."
-    print "There is " + str(Ultanium.Left) + " Ultanium left."
-    i = i + 1
-i = 0
-Bread = Dole(Bread, i)
-You.Bread = Bread.Taken
-print You.Name + " has " + str(You.Bread) + " Bread."
-print "There is " + str(Bread.Left) + " Bread left."
-for item in ListOfPlayers:
-    Bread = Dole(Bread, i)
-    Play[i].Bread = Bread.Taken
-    print Play[i].name + " has " + str(Play[i].Bread) + " Bread."
-    print "There is " + str(Bread.Left) + " Bread left."
-    i = i + 1
-i = 0
-Sugar = Dole(Sugar, i)
-You.Sugar = Sugar.Taken
-print You.Name + " has " + str(You.Sugar) + " Sugar."
-print "There is " + str(Sugar.Left) + " Sugar left."
-for item in ListOfPlayers:
-    Sugar = Dole(Sugar, i)
-    Play[i].Sugar = Sugar.Taken
-    print Play[i].name + " has " + str(Play[i].Sugar) + " Sugar."
-    print "There is " + str(Sugar.Left) + " Sugar left."
-    i = i + 1
-i = 0
-Salt = Dole(Salt, i)
-You.Salt = Salt.Taken
-print You.Name + " has " + str(You.Salt) + " Salt."
-print "There is " + str(Salt.Left) + " Salt left."
-for item in ListOfPlayers:
-    Salt = Dole(Salt, i)
-    Play[i].Salt = Salt.Taken
-    print Play[i].name + " has " + str(Play[i].Salt) + " Salt."
-    print "There is " + str(Salt.Left) + " Salt left."
-    i = i + 1
-i = 0
-Corn = Dole(Corn, i)
-You.Corn = Corn.Taken
-print You.Name + " has " + str(You.Corn) + " Corn."
-print "There is " + str(Corn.Left) + " Corn left."
-for item in ListOfPlayers:
-    Corn = Dole(Corn, i)
-    Play[i].Corn = Corn.Taken
-    print Play[i].name + " has " + str(Play[i].Corn) + " Corn."
-    print "There is " + str(Corn.Left) + " Corn left."
-    i = i + 1
-i = 0
-Chocolate = Dole(Chocolate, i)
-You.Chocolate = Chocolate.Taken
-print You.Name + " has " + str(You.Chocolate) + " Chocolate."
-print "There is " + str(Chocolate.Left) + " Chocolate left."
-for item in ListOfPlayers:
-    Chocolate = Dole(Chocolate, i)
-    Play[i].Chocolate = Chocolate.Taken
-    print Play[i].name + " has " + str(Play[i].Chocolate) + " Chocolate."
-    print "There is " + str(Chocolate.Left) + " Chocolate left."
-    i = i + 1
-i = 0
-Pistachios = Dole(Pistachios, i)
-You.Pistachios = Pistachios.Taken
-print You.Name + " has " + str(You.Pistachios) + " Pistachios."
-print "There is " + str(Pistachios.Left) + " Pistachios left."
-for item in ListOfPlayers:
-    Pistachios = Dole(Pistachios, i)
-    Play[i].Pistachios = Pistachios.Taken
-    print Play[i].name + " has " + str(Play[i].Pistachios) + " Pistachios."
-    print "There is " + str(Pistachios.Left) + " Pistachios left."
-    i = i + 1
-i = 0
-Bacon = Dole(Bacon, i)
-You.Bacon = Bacon.Taken
-print You.Name + " has " + str(You.Bacon) + " Bacon."
-print "There is " + str(Bacon.Left) + " Bacon left."
-for item in ListOfPlayers:
-    Bacon = Dole(Bacon, i)
-    Play[i].Bacon = Bacon.Taken
-    print Play[i].name + " has " + str(Play[i].Bacon) + " Bacon."
-    print "There is " + str(Bacon.Left) + " Bacon left."
-    i = i + 1
-i = 0
-Oysters = Dole(Oysters, i)
-You.Oysters = Oysters.Taken
-print You.Name + " has " + str(You.Oysters) + " Oysters."
-print "There is " + str(Oysters.Left) + " Oysters left."
-for item in ListOfPlayers:
-    Oysters = Dole(Oysters, i)
-    Play[i].Oysters = Oysters.Taken
-    print Play[i].name + " has " + str(Play[i].Oysters) + " Oysters."
-    print "There is " + str(Oysters.Left) + " Oysters left."
-    i = i + 1
-i = 0
-Eggs = Dole(Eggs, i)
-You.Eggs = Eggs.Taken
-print You.Name + " has " + str(You.Eggs) + " Eggs."
-print "There is " + str(Eggs.Left) + " Eggs left."
-for item in ListOfPlayers:
-    Eggs = Dole(Eggs, i)
-    Play[i].Eggs = Eggs.Taken
-    print Play[i].name + " has " + str(Play[i].Eggs) + " Eggs."
-    print "There is " + str(Eggs.Left) + " Eggs left."
-    i = i + 1
-i = 0
-Beef = Dole(Beef, i)
-You.Beef = Beef.Taken
-print You.Name + " has " + str(You.Beef) + " Beef."
-print "There is " + str(Beef.Left) + " Beef left."
-for item in ListOfPlayers:
-    Beef = Dole(Beef, i)
-    Play[i].Beef = Beef.Taken
-    print Play[i].name + " has " + str(Play[i].Beef) + " Beef."
-    print "There is " + str(Beef.Left) + " Beef left."
-    i = i + 1
-i = 0
-Cherries = Dole(Cherries, i)
-You.Cherries = Cherries.Taken
-print You.Name + " has " + str(You.Cherries) + " Cherries."
-print "There is " + str(Cherries.Left) + " Cherries left."
-for item in ListOfPlayers:
-    Cherries = Dole(Cherries, i)
-    Play[i].Cherries = Cherries.Taken
-    print Play[i].name + " has " + str(Play[i].Cherries) + " Cherries."
-    print "There is " + str(Cherries.Left) + " Cherries left."
-    i = i + 1
-i = 0
-Rubies = Dole(Rubies, i)
-You.Rubies = Rubies.Taken
-print You.Name + " has " + str(You.Rubies) + " Rubies."
-print "There is " + str(Rubies.Left) + " Rubies left."
-for item in ListOfPlayers:
-    Rubies = Dole(Rubies, i)
-    Play[i].Rubies = Rubies.Taken
-    print Play[i].name + " has " + str(Play[i].Rubies) + " Rubies."
-    print "There is " + str(Rubies.Left) + " Rubies left."
-    i = i + 1
-i = 0
-Diamonds = Dole(Diamonds, i)
-You.Diamonds = Diamonds.Taken
-print You.Name + " has " + str(You.Diamonds) + " Diamonds."
-print "There is " + str(Diamonds.Left) + " Diamonds left."
-for item in ListOfPlayers:
-    Diamonds = Dole(Diamonds, i)
-    Play[i].Diamonds = Diamonds.Taken
-    print Play[i].name + " has " + str(Play[i].Diamonds) + " Diamonds."
-    print "There is " + str(Diamonds.Left) + " Diamonds left."
-    i = i + 1
-i = 0
-Sapphires = Dole(Sapphires, i)
-You.Sapphires = Sapphires.Taken
-print You.Name + " has " + str(You.Sapphires) + " Sapphires."
-print "There is " + str(Sapphires.Left) + " Sapphires left."
-for item in ListOfPlayers:
-    Sapphires = Dole(Sapphires, i)
-    Play[i].Sapphires = Sapphires.Taken
-    print Play[i].name + " has " + str(Play[i].Sapphires) + " Sapphires."
-    print "There is " + str(Sapphires.Left) + " Sapphires left."
-    i = i + 1
-i = 0
-Admantium = Dole(Admantium, i)
-You.Admantium = Admantium.Taken
-print You.Name + " has " + str(You.Admantium) + " Admantium."
-print "There is " + str(Admantium.Left) + " Admantium left."
-for item in ListOfPlayers:
-    Admantium = Dole(Admantium, i)
-    Play[i].Admantium = Admantium.Taken
-    print Play[i].name + " has " + str(Play[i].Admantium) + " Admantium."
-    print "There is " + str(Admantium.Left) + " Admantium left."
-    i = i + 1
-i = 0
-Blackberries = Dole(Blackberries, i)
-You.Blackberries = Blackberries.Taken
-print You.Name + " has " + str(You.Blackberries) + " Blackberries."
-print "There is " + str(Blackberries.Left) + " Blackberries left."
-for item in ListOfPlayers:
-    Blackberries = Dole(Blackberries, i)
-    Play[i].Blackberries = Blackberries.Taken
-    print Play[i].name + " has " + str(Play[i].Blackberries) + " Blackberries."
-    print "There is " + str(Blackberries.Left) + " Blackberries left."
-    i = i + 1
-i = 0
-Kiwi = Dole(Kiwi, i)
-You.Kiwi = Kiwi.Taken
-print You.Name + " has " + str(You.Kiwi) + " Kiwi."
-print "There is " + str(Kiwi.Left) + " Kiwi left."
-for item in ListOfPlayers:
-    Kiwi = Dole(Kiwi, i)
-    Play[i].Kiwi = Kiwi.Taken
-    print Play[i].name + " has " + str(Play[i].Kiwi) + " Kiwi."
-    print "There is " + str(Kiwi.Left) + " Kiwi left."
-    i = i + 1
-i = 0
-Strawberries = Dole(Strawberries, i)
-You.Strawberries = Strawberries.Taken
-print You.Name + " has " + str(You.Strawberries) + " Strawberries."
-print "There is " + str(Strawberries.Left) + " Strawberries left."
-for item in ListOfPlayers:
-    Strawberries = Dole(Strawberries, i)
-    Play[i].Strawberries = Strawberries.Taken
-    print Play[i].name + " has " + str(Play[i].Strawberries) + " Strawberries."
-    print "There is " + str(Strawberries.Left) + " Strawberries left."
-    i = i + 1
-i = 0
-Wood = Dole(Wood, i)
-You.Wood = Wood.Taken
-print You.Name + " has " + str(You.Wood) + " Wood."
-print "There is " + str(Wood.Left) + " Wood left."
-for item in ListOfPlayers:
-    Wood = Dole(Wood, i)
-    Play[i].Wood = Wood.Taken
-    print Play[i].name + " has " + str(Play[i].Wood) + " Wood."
-    print "There is " + str(Wood.Left) + " Wood left."
-    i = i + 1
-i = 0
-Cows = Dole(Cows, i)
-You.Cows = Cows.Taken
-print You.Name + " has " + str(You.Cows) + " Cows."
-print "There is " + str(Cows.Left) + " Cows left."
-for item in ListOfPlayers:
-    Cows = Dole(Cows, i)
-    Play[i].Cows = Cows.Taken
-    print Play[i].name + " has " + str(Play[i].Cows) + " Cows."
-    print "There is " + str(Cows.Left) + " Cows left."
-    i = i + 1
-i = 0
-Chicken = Dole(Chicken, i)
-You.Chicken = Chicken.Taken
-print You.Name + " has " + str(You.Chicken) + " Chicken."
-print "There is " + str(Chicken.Left) + " Chicken left."
-for item in ListOfPlayers:
-    Chicken = Dole(Chicken, i)
-    Play[i].Chicken = Chicken.Taken
-    print Play[i].name + " has " + str(Play[i].Chicken) + " Chicken."
-    print "There is " + str(Chicken.Left) + " Chicken left."
-    i = i + 1
-i = 0
-Turkey = Dole(Turkey, i)
-You.Turkey = Turkey.Taken
-print You.Name + " has " + str(You.Turkey) + " Turkey."
-print "There is " + str(Turkey.Left) + " Turkey left."
-for item in ListOfPlayers:
-    Turkey = Dole(Turkey, i)
-    Play[i].Turkey = Turkey.Taken
-    print Play[i].name + " has " + str(Play[i].Turkey) + " Turkey."
-    print "There is " + str(Turkey.Left) + " Turkey left."
-    i = i + 1
-i = 0
-Fish = Dole(Fish, i)
-You.Fish = Fish.Taken
-print You.Name + " has " + str(You.Fish) + " Fish."
-print "There is " + str(Fish.Left) + " Fish left."
-for item in ListOfPlayers:
-    Fish = Dole(Fish, i)
-    Play[i].Fish = Fish.Taken
-    print Play[i].name + " has " + str(Play[i].Fish) + " Fish."
-    print "There is " + str(Fish.Left) + " Fish left."
-    i = i + 1
-i = 0
-Pigs = Dole(Pigs, i)
-You.Pigs = Pigs.Taken
-print You.Name + " has " + str(You.Pigs) + " Pigs."
-print "There is " + str(Pigs.Left) + " Pigs left."
-for item in ListOfPlayers:
-    Pigs = Dole(Pigs, i)
-    Play[i].Pigs = Pigs.Taken
-    print Play[i].name + " has " + str(Play[i].Pigs) + " Pigs."
-    print "There is " + str(Pigs.Left) + " Pigs left."
-    i = i + 1
-i = 0
-Sheep = Dole(Sheep, i)
-You.Sheep = Sheep.Taken
-print You.Name + " has " + str(You.Sheep) + " Sheep."
-print "There is " + str(Sheep.Left) + " Sheep left."
-for item in ListOfPlayers:
-    Sheep = Dole(Sheep, i)
-    Play[i].Sheep = Sheep.Taken
-    print Play[i].name + " has " + str(Play[i].Sheep) + " Sheep."
-    print "There is " + str(Sheep.Left) + " Sheep left."
-    i = i + 1
-i = 0
-Horses = Dole(Horses, i)
-You.Horses = Horses.Taken
-print You.Name + " has " + str(You.Horses) + " Horses."
-print "There is " + str(Horses.Left) + " Horses left."
-for item in ListOfPlayers:
-    Horses = Dole(Horses, i)
-    Play[i].Horses = Horses.Taken
-    print Play[i].name + " has " + str(Play[i].Horses) + " Horses."
-    print "There is " + str(Horses.Left) + " Horses left."
-    i = i + 1
-print You.Name + ":"
-print "Gold: " + str(You.Gold) + "; Silver: " + str(You.Silver) + "; Bronze: " + str(You.Bronze) + "; Platinum: " + str(You.Platinum) + "; Uranium: " + str(You.Uranium) + "; Iron: " + str(You.Iron) + "; Tin: " + str(You.Tin) + "; Titanium: " + str(You.Titanium) + "; Vibranium: " + str(You.Vibranium) + "; Ultanium: " + str(You.Ultanium) + "; Bread: " + str(You.Bread) + "; Sugar: " + str(You.Sugar) + "; Salt: " + str(You.Salt) + "; Corn: " + str(You.Corn) + "; Chocolate: " + str(You.Chocolate) + "; Pistachios: " + str(You.Pistachios) + "; Bacon: " + str(You.Bacon) + "; Oysters: " + str(You.Oysters) + "; Eggs: " + str(You.Eggs) + "; Beef: " + str(You.Beef) + "; Cherries: " + str(You.Cherries) + "; Rubies: " + str(You.Rubies) + "; Diamonds: " + str(You.Diamonds) + "; Sapphires: " + str(You.Sapphires) + "; Admantium: " + str(You.Admantium) + "; Blackberries: " + str(You.Blackberries) + "; Kiwi: " + str(You.Kiwi) + "; Strawberries: " + str(You.Strawberries) + "; Wood: " + str(You.Wood) + "; Cows: " + str(You.Cows) + "; Chicken: " + str(You.Chicken) + "; Turkey: " + str(You.Turkey) + "; Fish: " + str(You.Fish) + "; Pigs: " + str(You.Pigs) + "; Sheep: " + str(You.Sheep) + "; Horses: " + str(You.Horses)
-def listPlayers():
-    i = 0
-    for item in ListOfPlayers:
-        print Play[i].name + ":"
-        print "Gold: " + str(Play[i].Gold) + "; Silver: " + str(Play[i].Silver) + "; Bronze: " + str(Play[i].Bronze) + "; Platinum: " + str(Play[i].Platinum) + "; Uranium: " + str(Play[i].Uranium) + "; Iron: " + str(Play[i].Iron) + "; Tin: " + str(Play[i].Tin) + "; Titanium: " + str(Play[i].Titanium) + "; Vibranium: " + str(Play[i].Vibranium) + "; Ultanium: " + str(Play[i].Ultanium) + "; Bread: " + str(Play[i].Bread) + "; Sugar: " + str(Play[i].Sugar) + "; Salt: " + str(Play[i].Salt) + "; Corn: " + str(Play[i].Corn) + "; Chocolate: " + str(Play[i].Chocolate) + "; Pistachios: " + str(Play[i].Pistachios) + "; Bacon: " + str(Play[i].Bacon) + "; Oysters: " + str(Play[i].Oysters) + "; Eggs: " + str(Play[i].Eggs) + "; Beef: " + str(Play[i].Beef) + "; Cherries: " + str(Play[i].Cherries) + "; Rubies: " + str(Play[i].Rubies) + "; Diamonds: " + str(Play[i].Diamonds) + "; Sapphires: " + str(Play[i].Sapphires) + "; Admantium: " + str(Play[i].Admantium) + "; Blackberries: " + str(Play[i].Blackberries) + "; Kiwi: " + str(Play[i].Kiwi) + "; Strawberries: " + str(Play[i].Strawberries) + "; Wood: " + str(Play[i].Wood) + "; Cows: " + str(Play[i].Cows) + "; Chicken: " + str(Play[i].Chicken) + "; Turkey: " + str(Play[i].Turkey) + "; Fish: " + str(Play[i].Fish) + "; Pigs: " + str(Play[i].Pigs) + "; Sheep: " + str(Play[i].Sheep) + "; Horses: " + str(Play[i].Horses)
+print "** Please enter your name."
+You.Name = raw_input("")
+Players = [Player1, Player2, Player3, Player4]
+Names = ["John", "Luke", "Jackson", "Steele", "Carson", "Ken", "Jack", "Lenny", "Lukas", "Patrick", "Henry", "David", "Don", "Abe", "Andrew", "Ian", "Greg", "Daniel", "Xavier", "Jonas", "Nick", "Logan", "Alex", "Zachary", "Charles", "Casey", "Lee", "Jamie", "Erik", "Tony", "Blake", "Alexei", "Francisco", "Peter", "Matt", "Wade", "Grant", "Garrett", "Fitz", "Simmons", "Archer", "Cade", "Chris", "Ryan", "Paul", "Lincoln", "Cole", "Jon", "Antoine", "Mack", "Wesley", "Lester", "Clay", "Hans", "Henri", "Isaac", "Aaron", "Sebastian", "Dominic", "Carlos", "Cameron", "Austin", "Jake", "Carter", "Nathaniel", "Nathan"]
+given = "false"
+def getCiel():
+    GoldTote = float(Gold.Worth) * Gold.Total
+    SilverTote = float(Silver.Worth) * Silver.Total
+    BronzeTote = float(Bronze.Worth) * Bronze.Total
+    PlatinumTote = float(Platinum.Worth) * Platinum.Total
+    Totals = GoldTote + SilverTote + BronzeTote + PlatinumTote
+    return Totals
+def getWorth(Thing):
+    if Thing in "Gold":
+        return Gold.Worth
+    if Thing in "Silver":
+        return Silver.Worth
+    if Thing in "Platinum":
+        return Platinum.Worth
+    if Thing in "Bronze":
+        return Bronze.Worth
         i = i + 1
-        time.sleep(2)
-listPlayers()
-def Trade(ThisPlayer, ThatPlayer, Giveamount, Giving, Getamount, Getting):
-    print ThisPlayer.name + " is giving " + ThatPlayer.name + " " + str(Giveamount) + " " + Giving + " for " + str(Getamount) + " " + Getting + "."
-    time.sleep(5)
-    #print ThisPlayer.name + " will now have " + str(Giveamount) + " " + Giving
-    #print ThatPlayer.name + " will now have " + str(Getamount) + " " + Getting
-    if Giving is "Silver":
-        ThisPlayer.Silver = ThisPlayer.Silver - Giveamount
-        ThatPlayer.Silver = ThatPlayer.Silver + Giveamount
-    if Getting is "Silver":
-        ThisPlayer.Silver = ThisPlayer.Silver + Giveamount
-        ThatPlayer.Silver = ThatPlayer.Silver - Giveamount
-    if Giving is "Bronze":
-        ThisPlayer.Bronze = ThisPlayer.Bronze - Giveamount
-        ThatPlayer.Bronze = ThatPlayer.Bronze + Giveamount
-    if Getting is "Bronze":
-        ThisPlayer.Bronze = ThisPlayer.Bronze + Giveamount
-        ThatPlayer.Bronze = ThatPlayer.Bronze - Giveamount
-    if Giving is "Platinum":
-        ThisPlayer.Platinum = ThisPlayer.Platinum - Giveamount
-        ThatPlayer.Platinum = ThatPlayer.Platinum + Giveamount
-    if Getting is "Platinum":
-        ThisPlayer.Platinum = ThisPlayer.Platinum + Giveamount
-        ThatPlayer.Platinum = ThatPlayer.Platinum - Giveamount
-    if Giving is "Uranium":
-        ThisPlayer.Uranium = ThisPlayer.Uranium - Giveamount
-        ThatPlayer.Uranium = ThatPlayer.Uranium + Giveamount
-    if Getting is "Uranium":
-        ThisPlayer.Uranium = ThisPlayer.Uranium + Giveamount
-        ThatPlayer.Uranium = ThatPlayer.Uranium - Giveamount
-    if Giving is "Iron":
-        ThisPlayer.Iron = ThisPlayer.Iron - Giveamount
-        ThatPlayer.Iron = ThatPlayer.Iron + Giveamount
-    if Getting is "Iron":
-        ThisPlayer.Iron = ThisPlayer.Iron + Giveamount
-        ThatPlayer.Iron = ThatPlayer.Iron - Giveamount
-    if Giving is "Tin":
-        ThisPlayer.Tin = ThisPlayer.Tin - Giveamount
-        ThatPlayer.Tin = ThatPlayer.Tin + Giveamount
-    if Getting is "Tin":
-        ThisPlayer.Tin = ThisPlayer.Tin + Giveamount
-        ThatPlayer.Tin = ThatPlayer.Tin - Giveamount
-    if Giving is "Titanium":
-        ThisPlayer.Titanium = ThisPlayer.Titanium - Giveamount
-        ThatPlayer.Titanium = ThatPlayer.Titanium + Giveamount
-    if Getting is "Titanium":
-        ThisPlayer.Titanium = ThisPlayer.Titanium + Giveamount
-        ThatPlayer.Titanium = ThatPlayer.Titanium - Giveamount
-    if Giving is "Vibranium":
-        ThisPlayer.Vibranium = ThisPlayer.Vibranium - Giveamount
-        ThatPlayer.Vibranium = ThatPlayer.Vibranium + Giveamount
-    if Getting is "Vibranium":
-        ThisPlayer.Vibranium = ThisPlayer.Vibranium + Giveamount
-        ThatPlayer.Vibranium = ThatPlayer.Vibranium - Giveamount
-    if Giving is "Ultanium":
-        ThisPlayer.Ultanium = ThisPlayer.Ultanium - Giveamount
-        ThatPlayer.Ultanium = ThatPlayer.Ultanium + Giveamount
-    if Getting is "Ultanium":
-        ThisPlayer.Ultanium = ThisPlayer.Ultanium + Giveamount
-        ThatPlayer.Ultanium = ThatPlayer.Ultanium - Giveamount
-    if Giving is "Bread":
-        ThisPlayer.Bread = ThisPlayer.Bread - Giveamount
-        ThatPlayer.Bread = ThatPlayer.Bread + Giveamount
-    if Getting is "Bread":
-        ThisPlayer.Bread = ThisPlayer.Bread + Giveamount
-        ThatPlayer.Bread = ThatPlayer.Bread - Giveamount
-    if Giving is "Sugar":
-        ThisPlayer.Sugar = ThisPlayer.Sugar - Giveamount
-        ThatPlayer.Sugar = ThatPlayer.Sugar + Giveamount
-    if Getting is "Sugar":
-        ThisPlayer.Sugar = ThisPlayer.Sugar + Giveamount
-        ThatPlayer.Sugar = ThatPlayer.Sugar - Giveamount
-    if Giving is "Salt":
-        ThisPlayer.Salt = ThisPlayer.Salt - Giveamount
-        ThatPlayer.Salt = ThatPlayer.Salt + Giveamount
-    if Getting is "Salt":
-        ThisPlayer.Salt = ThisPlayer.Salt + Giveamount
-        ThatPlayer.Salt = ThatPlayer.Salt - Giveamount
-    if Giving is "Corn":
-        ThisPlayer.Corn = ThisPlayer.Corn - Giveamount
-        ThatPlayer.Corn = ThatPlayer.Corn + Giveamount
-    if Getting is "Corn":
-        ThisPlayer.Corn = ThisPlayer.Corn + Giveamount
-        ThatPlayer.Corn = ThatPlayer.Corn - Giveamount
-    if Giving is "Cocolate":
-        ThisPlayer.Cocolate = ThisPlayer.Cocolate - Giveamount
-        ThatPlayer.Cocolate = ThatPlayer.Cocolate + Giveamount
-    if Getting is "Cocolate":
-        ThisPlayer.Cocolate = ThisPlayer.Cocolate + Giveamount
-        ThatPlayer.Cocolate = ThatPlayer.Cocolate - Giveamount
-    if Giving is "Pistachios":
-        ThisPlayer.Pistachios = ThisPlayer.Pistachios - Giveamount
-        ThatPlayer.Pistachios = ThatPlayer.Pistachios + Giveamount
-    if Getting is "Pistachios":
-        ThisPlayer.Pistachios = ThisPlayer.Pistachios + Giveamount
-        ThatPlayer.Pistachios = ThatPlayer.Pistachios - Giveamount
-    if Giving is "Bacon":
-        ThisPlayer.Bacon = ThisPlayer.Bacon - Giveamount
-        ThatPlayer.Bacon = ThatPlayer.Bacon + Giveamount
-    if Getting is "Bacon":
-        ThisPlayer.Bacon = ThisPlayer.Bacon + Giveamount
-        ThatPlayer.Bacon = ThatPlayer.Bacon - Giveamount
-    if Giving is "Oysters":
-        ThisPlayer.Oysters = ThisPlayer.Oysters - Giveamount
-        ThatPlayer.Oysters = ThatPlayer.Oysters + Giveamount
-    if Getting is "Oysters":
-        ThisPlayer.Oysters = ThisPlayer.Oysters + Giveamount
-        ThatPlayer.Oysters = ThatPlayer.Oysters - Giveamount
-    if Giving is "Eggs":
-        ThisPlayer.Eggs = ThisPlayer.Eggs - Giveamount
-        ThatPlayer.Eggs = ThatPlayer.Eggs + Giveamount
-    if Getting is "Eggs":
-        ThisPlayer.Eggs = ThisPlayer.Eggs + Giveamount
-        ThatPlayer.Eggs = ThatPlayer.Eggs - Giveamount
-    if Giving is "Beef":
-        ThisPlayer.Beef = ThisPlayer.Beef - Giveamount
-        ThatPlayer.Beef = ThatPlayer.Beef + Giveamount
-    if Getting is "Beef":
-        ThisPlayer.Beef = ThisPlayer.Beef + Giveamount
-        ThatPlayer.Beef = ThatPlayer.Beef - Giveamount
-    if Giving is "Cherries":
-        ThisPlayer.Cherries = ThisPlayer.Cherries - Giveamount
-        ThatPlayer.Cherries = ThatPlayer.Cherries + Giveamount
-    if Getting is "Cherries":
-        ThisPlayer.Cherries = ThisPlayer.Cherries + Giveamount
-        ThatPlayer.Cherries = ThatPlayer.Cherries - Giveamount
-    if Giving is "Rubies":
-        ThisPlayer.Rubies = ThisPlayer.Rubies - Giveamount
-        ThatPlayer.Rubies = ThatPlayer.Rubies + Giveamount
-    if Getting is "Rubies":
-        ThisPlayer.Rubies = ThisPlayer.Rubies + Giveamount
-        ThatPlayer.Rubies = ThatPlayer.Rubies - Giveamount
-    if Giving is "Diamonds":
-        ThisPlayer.Diamonds = ThisPlayer.Diamonds - Giveamount
-        ThatPlayer.Diamonds = ThatPlayer.Diamonds + Giveamount
-    if Getting is "Diamonds":
-        ThisPlayer.Diamonds = ThisPlayer.Diamonds + Giveamount
-        ThatPlayer.Diamonds = ThatPlayer.Diamonds - Giveamount
-    if Giving is "Sapphires":
-        ThisPlayer.Sapphires = ThisPlayer.Sapphires - Giveamount
-        ThatPlayer.Sapphires = ThatPlayer.Sapphires + Giveamount
-    if Getting is "Sapphires":
-        ThisPlayer.Sapphires = ThisPlayer.Sapphires + Giveamount
-        ThatPlayer.Sapphires = ThatPlayer.Sapphires - Giveamount
-    if Giving is "Admantium":
-        ThisPlayer.Admantium = ThisPlayer.Admantium - Giveamount
-        ThatPlayer.Admantium = ThatPlayer.Admantium + Giveamount
-    if Getting is "Admantium":
-        ThisPlayer.Admantium = ThisPlayer.Admantium + Giveamount
-        ThatPlayer.Admantium = ThatPlayer.Admantium - Giveamount
-    if Giving is "Blackberries":
-        ThisPlayer.Blackberries = ThisPlayer.Blackberries - Giveamount
-        ThatPlayer.Blackberries = ThatPlayer.Blackberries + Giveamount
-    if Getting is "Blackberries":
-        ThisPlayer.Blackberries = ThisPlayer.Blackberries + Giveamount
-        ThatPlayer.Blackberries = ThatPlayer.Blackberries - Giveamount
-    if Giving is "Kiwi":
-        ThisPlayer.Kiwi = ThisPlayer.Kiwi - Giveamount
-        ThatPlayer.Kiwi = ThatPlayer.Kiwi + Giveamount
-    if Getting is "Kiwi":
-        ThisPlayer.Kiwi = ThisPlayer.Kiwi + Giveamount
-        ThatPlayer.Kiwi = ThatPlayer.Kiwi - Giveamount
-    if Giving is "Strawberries":
-        ThisPlayer.Strawberries = ThisPlayer.Strawberries - Giveamount
-        ThatPlayer.Strawberries = ThatPlayer.Strawberries + Giveamount
-    if Getting is "Strawberries":
-        ThisPlayer.Strawberries = ThisPlayer.Strawberries + Giveamount
-        ThatPlayer.Strawberries = ThatPlayer.Strawberries - Giveamount
-    if Giving is "Wood":
-        ThisPlayer.Wood = ThisPlayer.Wood - Giveamount
-        ThatPlayer.Wood = ThatPlayer.Wood + Giveamount
-    if Getting is "Wood":
-        ThisPlayer.Wood = ThisPlayer.Wood + Giveamount
-        ThatPlayer.Wood = ThatPlayer.Wood - Giveamount
-    if Giving is "Cows":
-        ThisPlayer.Cows = ThisPlayer.Cows - Giveamount
-        ThatPlayer.Cows = ThatPlayer.Cows + Giveamount
-    if Getting is "Cows":
-        ThisPlayer.Cows = ThisPlayer.Cows + Giveamount
-        ThatPlayer.Wood = ThatPlayer.Cows - Giveamount
-    if Giving is "Chicken":
-        ThisPlayer.Chicken = ThisPlayer.Chicken - Giveamount
-        ThatPlayer.Chicken = ThatPlayer.Chicken + Giveamount
-    if Getting is "Chicken":
-        ThisPlayer.Chicken = ThisPlayer.Chicken + Giveamount
-        ThatPlayer.Chicken = ThatPlayer.Chicken - Giveamount
-    if Giving is "Turkey":
-        ThisPlayer.Turkey = ThisPlayer.Turkey - Giveamount
-        ThatPlayer.Turkey = ThatPlayer.Turkey + Giveamount
-    if Getting is "Turkey":
-        ThisPlayer.Turkey = ThisPlayer.Turkey + Giveamount
-        ThatPlayer.Turkey = ThatPlayer.Turkey - Giveamount
-    if Giving is "Fish":
-        ThisPlayer.Fish = ThisPlayer.Fish - Giveamount
-        ThatPlayer.Fish = ThatPlayer.Fish + Giveamount
-    if Getting is "Fish":
-        ThisPlayer.Fish = ThisPlayer.Fish + Giveamount
-        ThatPlayer.Fish = ThatPlayer.Fish - Giveamount
-    if Giving is "Pigs":
-        ThisPlayer.Pigs = ThisPlayer.Pigs - Giveamount
-        ThatPlayer.Pigs = ThatPlayer.Pigs + Giveamount
-    if Getting is "Pigs":
-        ThisPlayer.Pigs = ThisPlayer.Pigs + Giveamount
-        ThatPlayer.Pigs = ThatPlayer.Pigs - Giveamount
-    if Giving is "Sheep":
-        ThisPlayer.Sheep = ThisPlayer.Sheep - Giveamount
-        ThatPlayer.Sheep = ThatPlayer.Sheep + Giveamount
-    if Getting is "Sheep":
-        ThisPlayer.Sheep = ThisPlayer.Sheep + Giveamount
-        ThatPlayer.Sheep = ThatPlayer.Sheep - Giveamount
-    if Giving is "Horses":
-        ThisPlayer.Horses = ThisPlayer.Horses - Giveamount
-        ThatPlayer.Horses = ThatPlayer.Horses + Giveamount
-    if Getting is "Horses":
-        ThisPlayer.Horses = ThisPlayer.Horses + Giveamount
-        ThatPlayer.Horses = ThatPlayer.Horses - Giveamount
-    listPlayers()
-def getItem(Person, Object):
-    if Object is "Gold":
-        return Person.Gold
-    if Object is "Silver":
-        return Person.Silver
-    if Object is "Bronze":
-        return Person.Bronze
-    if Object is "Platinum":
-        return Person.Platinum
-    if Object is "Uranium":
-        return Person.Uranium
-    if Object is "Iron":
-        return Person.Iron
-    if Object is "Tin":
-        return Person.Tin
-    if Object is "Titanium":
-        return Person.Titanium
-    if Object is "Vibranium":
-        return Person.Vibranium
-    if Object is "Ultanium":
-        return Person.Ultanium
-    if Object is "Bread":
-        return Person.Bread
-    if Object is "Sugar":
-        return Person.Sugar
-    if Object is "Salt":
-        return Person.Salt
-    if Object is "Corn":
-        return Person.Corn
-    if Object is "Chocolate":
-        return Person.Chocolate
-    if Object is "Pistachios":
-        return Person.Pistachios
-    if Object is "Bacon":
-        return Person.Bacon
-    if Object is "Oysters":
-        return Person.Oysters
-    if Object is "Eggs":
-        return Person.Eggs
-    if Object is "Beef":
-        return Person.Beef
-    if Object is "Cherries":
-        return Person.Cherries
-    if Object is "Rubies":
-        return Person.Rubies
-    if Object is "Diamonds":
-        return Person.Diamonds
-    if Object is "Sapphires":
-        return Person.Sapphires
-    if Object is "Admantium":
-        return Person.Admantium
-    if Object is "Blackberries":
-        return Person.Blackberries
-    if Object is "Kiwi":
-        return Person.Kiwi
-    if Object is "Strawberries":
-        return Person.Strawberries
-    if Object is "Wood":
-        return Person.Wood
-    if Object is "Cows":
-        return Person.Cows
-    if Object is "Chicken":
-        return Person.Chicken
-    if Object is "Turkey":
-        return Person.Turkey
-    if Object is "Fish":
-        return Person.Fish
-    if Object is "Pigs":
-        return Person.Pigs
-    if Object is "Sheep":
-        return Person.Sheep
-    if Object is "Horses":
-        return Person.Horses
-playas = players - 1
-def Loop():
-    while 1 is 1:
-        First_Trader_int = random.randint(0, playas)
-        print First_Trader_int
-        if First_Trader_int > 0:
-            First_Trader = Play[First_Trader_int]
+def getTotal(Thing):
+    if Thing in "Gold":
+        return Gold.Total
+    if Thing in "Silver":
+        return Silver.Total
+    if Thing in "Platinum":
+        return Platinum.Total
+    if Thing in "Bronze":
+        return Bronze.Total
+        i = i + 1
+def getFair(Thing1, Thing2):
+    i = 0
+    try:
+        Worth1 = getTotal(Thing1)
+        Worth2 = getTotal(Thing2)
+        Worth1 = Worth1 * 100
+        Worth2 = Worth2 * 100
+        #print Worth2
+        #print Worth1
+        result = float(Worth2) / Worth1
+        #print result
+        return result
+    except TypeError:
+        print "!! Error finding fair market values for " + Thing1 + " and " + Thing2 + "."
+        return 0
+def getMaterial(Thing):
+    newLine()
+    i = 0
+    for item in Materials:
+        if Thing in Materials[i].Name:
+            return Materials[i]
+        i = i + 1
+def takeMaterial(Thing, Ammount):
+    newLine()
+    i = 0
+    for item in Materials:
+        if Thing in Materials[i].Name:
+            Materials[i].Left = Materials[i].Left - Ammount
+            print "** Took " + str(Ammount) + " " + Thing + " from the bank."
+            print "** There is now " + str(Materials[i].Left) + " " + Thing + " left."
+        i = i + 1
+def giveMaterial(Thing, Ammount):
+    newLine()
+    i = 0
+    for item in Materials:
+        if Thing in Materials[i].Name:
+            Materials[i].Left = Materials[i].Left + Ammount
+            print "** Put " + str(Ammount) + " " + Thing + " in the bank."
+            print "** There is now " + str(Materials[i].Left) + " " + Thing + " left."
+        i = i + 1
+def givePlayer(Player, Thing, Ammount):
+    newLine()
+    i = 0
+    given = "false"
+    for item in Players:
+        if Player in Players[i].Name and "false" in given:
+            if "Gold" in Thing:
+                Players[i].Gold = Players[i].Gold + Ammount
+                print "** Gave " + Player + " " + str(Ammount) + " " + Thing + "."
+                while Ammount > 0:
+                    Players[i].worth = Players[i].worth + float(getWorth(Thing))
+                    Ammount = Ammount - 1
+                while Ammount < 0:
+                    Players[i].worth = Players[i].worth - getWorth(Thing)
+                    Ammount = Ammount + 1
+                print "** " + Player + " now has " + str(Players[i].Gold) + " " + Thing + "."
+                given = "true"
+            if "Platinum" in Thing:
+                Players[i].Platinum = Players[i].Platinum + Ammount
+                print "** Gave " + Player + " " + str(Ammount) + " " + Thing + "."
+                while Ammount > 0:
+                    Players[i].worth = Players[i].worth + getWorth(Thing)
+                    Ammount = Ammount - 1
+                while Ammount < 0:
+                    Players[i].worth = Players[i].worth - getWorth(Thing)
+                    Ammount = Ammount + 1
+                print "** " + Player + " now has " + str(Players[i].Platinum) + " " + Thing + "."
+                given = "true"
+            if "Silver" in Thing:
+                Players[i].Silver = Players[i].Silver + Ammount
+                print "** Gave " + Player + " " + str(Ammount) + " " + Thing + "."
+                while Ammount > 0:
+                    Players[i].worth = Players[i].worth + getWorth(Thing)
+                    Ammount = Ammount - 1
+                while Ammount < 0:
+                    Players[i].worth = Players[i].worth - getWorth(Thing)
+                    Ammount = Ammount + 1
+                print "** " + Player + " now has " + str(Players[i].Silver) + " " + Thing + "."
+                given = "true"
+            if "Bronze" in Thing:
+                Players[i].Bronze = Players[i].Bronze + Ammount
+                print "** Gave " + Player + " " + str(Ammount) + " " + Thing + "."
+                while Ammount > 0:
+                    Players[i].worth = Players[i].worth + getWorth(Thing)
+                    Ammount = Ammount - 1
+                while Ammount < 0:
+                    Players[i].worth = Players[i].worth - getWorth(Thing)
+                    Ammount = Ammount + 1
+                print "** " + Player + " now has " + str(Players[i].Bronze) + " " + Thing + "."
+                given = "true"
+        i = i + 1
+    if Player in You.Name:
+            if "Gold" in Thing:
+                You.Gold = You.Gold + Ammount
+                print "** Gave " + Player + " " + str(Ammount) + " " + Thing + "."
+                while Ammount > 0:
+                    You.worth = You.worth + getWorth(Thing)
+                    Ammount = Ammount - 1
+                while Ammount < 0:
+                    You.worth = You.worth - getWorth(Thing)
+                    Ammount = Ammount + 1
+                given = "true"
+                print "** " + Player + " now has " + str(You.Gold) + " " + Thing + "."
+            if "Platinum" in Thing:
+                You.Platinum = You.Platinum + Ammount
+                print "** Gave " + Player + " " + str(Ammount) + " " + Thing + "."
+                while Ammount > 0:
+                    You.worth = You.worth + getWorth(Thing)
+                    Ammount = Ammount - 1
+                while Ammount < 0:
+                    You.worth = You.worth - getWorth(Thing)
+                    Ammount = Ammount + 1
+                given = "true"
+                print "** " + Player + " now has " + str(You.Platinum) + " " + Thing + "."
+            if "Silver" in Thing:
+                You.Silver = You.Silver + Ammount
+                print "** Gave " + Player + " " + str(Ammount) + " " + Thing + "."
+                while Ammount > 0:
+                    You.worth = You.worth + getWorth(Thing)
+                    Ammount = Ammount - 1
+                while Ammount < 0:
+                    You.worth = You.worth - getWorth(Thing)
+                    Ammount = Ammount + 1
+                given = "true"
+                print "** " + Player + " now has " + str(You.Silver) + " " + Thing + "."
+            if "Bronze" in Thing:
+                You.Bronze = You.Bronze + Ammount
+                print "** Gave " + Player + " " + str(Ammount) + " " + Thing + "."
+                while Ammount > 0:
+                    You.worth = You.worth + getWorth(Thing)
+                    Ammount = Ammount - 1
+                while Ammount < 0:
+                    You.worth = You.worth - getWorth(Thing)
+                    Ammount = Ammount + 1
+                given = "true"
+                print "** " + Player + " now has " + str(You.Bronze) + " " + Thing + "."
+def Deal():
+    global Player1
+    global Player2
+    global Player3
+    global Player4
+    global You
+    n = 0
+    for item in Players:
+        Players[n].Name = Names[random.randint(0, len(Names) - 1)]
+        Players[n].wants = Materials[random.randint(0, len(Materials) - 1)].Name
+        #print Players[n].Name + " wants " + Players[n].wants
+        n = n + 1
+    i = 0
+    lenPlay = 0
+    for item in Players:
+        lenPlay = lenPlay + 1
+    for item in Materials:
+        n = 0
+        for item in Players:
+            if Materials[i].Left / lenPlay < 5:
+                giving = random.randint(0, int(Materials[i].Left * .5))
+            else:
+                giving = random.randint(0, int(Materials[i].Left * .6))
+            givePlayer(Players[n].Name, Materials[i].Name, giving)
+            takeMaterial(Materials[i].Name, giving)
+            n = n + 1
+        giving = Materials[i].Left
+        givePlayer(You.Name, Materials[i].Name, giving)
+        takeMaterial(Materials[i].Name, giving)
+        i = i + 1
+def newLine():
+    print ""
+def getReport():
+    i = 0
+    newLine()
+    print "** Market Report:"
+    for item in Players:
+        newLine()
+        change = Players[i].worth - Players[i].oldworth
+        if change >= 0:
+            print "** " + Players[i].Name + ": " + str(Players[i].worth) + "m +" + str(change)
         else:
-            First_Trader = Play[0]
-        Second_Trader_int = random.randint(0, playas)
-        if Second_Trader_int > 0:
-            Second_Trader = Play[Second_Trader_int]
+            print "** " + Players[i].Name + ": " + str(Players[i].worth) + "m " + str(change)
+        Players[i].oldworth = Players[i].worth
+        i = i + 1
+    newLine()
+    change = You.worth - You.oldworth
+    if change >= 0:
+        print "** " + You.Name + ": " + str(You.worth) + "m +" + str(change)
+    else:
+        print "** " + You.Name + ": " + str(You.worth) + "m " + str(change)
+    You.oldworth = You.worth
+    i = 0
+    Ciel = getCiel()
+    limit = getCiel() * .75
+    newLine()
+    print "**PSA: You need " + str(limit) + "m to win."
+    for item in Players:
+        if Players[i].worth >= limit:
+            print "** " + Players[i].Name + " has won the game! Press enter to exit."
+            raw_input("")
+            one = 0
+            i = i + 1
+        elif You.worth >= limit:
+            print "** " + You.Name + " has won the game! Press enter to exit."
+            raw_input("")
+            one = 0
+    newLine()
+turn = 0
+Deal()
+one = 1
+while one > 0:
+    turn = turn + 1
+    print "** Round #" + str(turn)
+    getReport()
+    newLine()
+    print "** It's your turn. Would you like to trade?"
+    response = raw_input()
+    response = response.upper()
+    if "NO" in response or "PASS" in response:
+        print "** " + You.Name + " passes."
+    elif "YES" in response:
+        print "** How would you like to trade? example: Give 1 Gold"
+        print "@adviser: You have " + str(You.Gold) + " Gold, " + str(You.Silver) + " Silver, " + str(You.Bronze) + " Bronze and " + str(You.Platinum) + " Platinum."
+        response = raw_input()
+        response = response.split(" ")
+        try:
+            print You.Name + " is looking to give away " + response[1] + " " + response[2] + "."
+            e = "no"
+        except IndexError:
+            print You.Name + " passes."
+            e = "yep"
+            response = [" ", " ", " "]
+        n = 0
+        for item in Players:
+            if Players[n].wants in response[2] and "no" in e:
+                chosen = ["Gold", "Silver", "Bronze", "Platinum"]
+                chosen = chosen[random.randint(0, len(chosen) - 1)]
+                #print chosen
+                giving = 0
+                if "Gold" in chosen and Players[n].Gold > 0:
+                    giving = random.randint(0, int(Players[n].Gold * .7))
+                if "Silver" in chosen and Players[n].Silver > 0:
+                    giving = random.randint(0, int(Players[n].Silver * .7))
+                if "Bronze" in chosen and Players[n].Bronze > 0:
+                    giving = random.randint(0, int(Players[n].Bronze * .7))
+                if "Platinum" in chosen and Players[n].Platinum > 0:
+                    giving = random.randint(0, int(Players[n].Platinum * .7))
+                if giving > 0 and response[1] > 0:
+                    time.sleep(1)
+                    print "** " + Players[n].Name + " accepts your offer. He wishes to give you " + str(giving) + " " + chosen + " in return. Do you accept?"
+                    yn = raw_input()
+                    yn = yn.upper()
+                    if "YES" in yn:
+                        givePlayer(Players[n].Name, response[2], int(response[1]))
+                        givePlayer(You.Name, response[2], int(response[1]) * -1)
+
+                        givePlayer(Players[n].Name, chosen, giving * -1)
+                        givePlayer(You.Name, chosen, giving)
+                    if "NO" in yn:
+                        print "** " + You.Name + " passes."
+                if "n" in e:
+                    time.sleep(1)
+                    print "** " + Players[n].Name + " passes."
+                else:
+                    e = e
+            else:
+                time.sleep(1)
+                print "** " + Players[n].Name + " passes."
+            n = n + 1
+    n = 0
+    for item in Players:
+        print "** It's " + Players[n].Name + "'s turn."
+        time.sleep(1)
+        Chance = ["Gold", "Silver", "Bronze", "Platinum"]
+        choice = random.randint(0, 3)
+        decision = Chance[choice]
+        giving = 0
+        if "Gold" in decision and Players[n].Gold > 0:
+            giving = random.randint(0, Players[n].Gold)
+        if "Silver" in decision and Players[n].Silver > 0:
+            giving = random.randint(0, Players[n].Silver)
+        if "Bronze" in decision and Players[n].Bronze > 0:
+            giving = random.randint(0, Players[n].Bronze)
+        if "Platinum" in decision and Players[n].Platinum > 0:
+            giving = random.randint(0, Players[n].Platinum)
+        if giving < 1:
+            time.sleep(1)
+            print  "** " + Players[n].Name + " passes."
         else:
-            Second_Trader = Play[0]
-        #if First_Trader.Interest1 in Second_Trader.Disinterest1:
-            #Trade(Play[Second_Trader], Play[First_Trader], getItem(First_Trader.Interest1), random.randint(0, getItem(First_Trader.Interest1).left), 0)
-        go = "yes"
-        if First_Trader.Interest1 < 1:
-            go = "no"
-        if Second_Trader.Disinterest1 < 1:
-            go = "no"
-        if getItem(First_Trader, First_Trader.Interest1) < 1:
-            go = "no"
-        if getItem(Second_Trader, Second_Trader.Disinterest1) < 1:
-            go = "no"
-        if "yes" in go:
-            print "The deal between " + Play[Second_Trader_int].name + " and " + Play[First_Trader_int].name + " is on."
-            time.sleep(3)
-            Trade(Play[Second_Trader_int], Play[First_Trader_int], random.randint(0, getItem(First_Trader, First_Trader.Interest1)), First_Trader.Interest1, random.randint(0, getItem(Second_Trader, Second_Trader.Disinterest1)), Second_Trader.Disinterest1)
-        if "no" in go:
-            print "The deal between " + Play[Second_Trader_int].name + " and " + Play[First_Trader_int].name + " fell through."
-            time.sleep(2)
-        #raw_input("Press Enter to continue.")
-#Trade(Play[0], Play[1], 1, "Gold", 1, "Silver")
-Loop()
+            print "** " + Players[n].Name + " is looking to give away " + str(giving) + " " + decision + "."
+            print "@insider: " + Players[n].Name + " wants " + Players[n].wants
+            print "@advisor: 1 " + decision + " is worth " + str(getWorth(decision)) + "m."
+            #
+            b = 0
+            shout = 0
+            for item in Players:
+                if Players[b].wants in decision:
+                    givin = 0
+                    giveaway = random.randint(0, len(Materials) - 1)
+                    giveaway = Materials[giveaway].Name
+                    if "Gold" in giveaway and Players[b].Gold > 0:
+                        givin = random.randint(0, int(Players[b].Gold * .7))
+                    if "Silver" in giveaway and Players[b].Silver > 0:
+                        givin = random.randint(0, int(Players[b].Silver * .7))
+                    if "Bronze" in giveaway and Players[b].Bronze > 0:
+                        givin = random.randint(0, int(Players[b].Bronze * .7))
+                    if "Platinum" in giveaway and Players[b].Platinum > 0:
+                        givin = random.randint(0, int(Players[b].Platinum * .7))  
+                    if givin > 0:
+                        if Players[n].wants in Players[b].wants and shout == 0:
+                            print "@troll Ha! " + Players[n].Name + " is giving away the very thing he wants!"
+                            shout = 1
+                        else:
+                            print "** " + Players[b].Name + " accepts " + Players[n].Name + "'s offer. He wishes to give him " + str(givin) + " " + giveaway + " in return. Do you accept?"
+                            yn = ""
+                            if giveaway in Players[n].wants or getFair(giveaway, Players[n].wants) * giving <= int(givin):
+                                yn = "yes"
+                            else:
+                                yn = "no"
+                            #print yn
+                            yn = yn.upper()
+                            if "YES" in yn:
+                                print "yes"
+                                givePlayer(Players[b].Name, decision, giving)
+                                givePlayer(Players[n].Name, decision, giving * -1)
+                                
+                                givePlayer(Players[n].Name, giveaway, givin)
+                                givePlayer(Players[b].Name, giveaway, givin * -1)
+                            if "NO" in yn:
+                                print "** " + Players[n].Name + " declines the offer."
+                    if givin < 1:
+                        time.sleep(1)
+                        print "** " + Players[b].Name + " passes."
+                else:
+                    time.sleep(1)
+                    print "** " + Players[b].Name + " passes."
+                b = b + 1
+            #
+            print "** Do you accept " + Players[n].Name + "'s offer?"
+            response = raw_input("")
+            response = response.upper()
+            try:
+                response = response.split(" ")
+                response0 = int(response[0])
+            except ValueError:
+                response0 = 0
+            if "YES" in response:
+                if giving > 1:
+                    print "@advisor: " + str(giving) + " " + decision + " are worth " + str(getFair(decision, Players[n].wants) * giving) + " " + Players[n].wants + "."
+                else:
+                    print "@advisor: " + str(giving) + " " + decision + " is worth " + str(getFair(decision, Players[n].wants) * giving) + " " + Players[n].wants + "."
+                print "** What will you offer in return?"
+                print "@adviser: You have " + str(You.Gold) + " Gold, " + str(You.Silver) + " Silver, " + str(You.Bronze) + " Bronze and " + str(You.Platinum) + " Platinum."
+                response = raw_input("")
+                response = response.upper()
+                response = response.split(" ")
+                j = 0
+                passed = "false"
+                try:
+                    inter = int(response[0])
+                    #inter1 = int(response[1])
+                except ValueError:
+                    response = [response[0], "0", " "]
+                except IndexError:
+                    response = response + " cut it cut "
+                    response.split(" ")
+                for item in response:
+                    dont = "nvm"
+                    try:
+                        response[j] = response[j]
+                    except TypeError:
+                        dont = "go"
+                    if "nvm" in dont:
+                        if "PASS" in response[j]:
+                            print "** " + You.Name + " passes."
+                            passed = "true"
+                    response[j] = response[j].capitalize()
+                    j = j + 1
+                huh = 0
+                #print response[0]
+                try:
+                    huh = int(response[0])
+                except ValueError:
+                    response[0] = 0
+                if "true" in passed:
+                    j = j
+                elif response[1] in Players[n].wants or getFair(response[1], Players[n].wants) * giving <= int(response[0]):
+                    if getFair(response[1], Players[n].wants) * giving < int(response[0]):
+                        print "@troll lol check this out! " + Players[n].Name + " just ripped off " + You.Name + "!!"
+                        print "** " + You.Name + " accepts " + " " + Players[n].Name + "'s offer."
+                        givePlayer(You.Name, decision, giving)  
+                        givePlayer(Players[n].Name, decision, giving * -1)
+                        givePlayer(You.Name, response[1], int(response[0]) * -1)
+                        givePlayer(Players[n].Name, response[1], int(response[0]))
+                    elif getFair(decision, Players[n].wants) * giving - 3 >= int(response[0]):
+                        print "** " + Players[n].Name + " think you're trying to cheat him."
+                        print "** " + Players[n].Name + " backs out of the deal."
+                    elif int(response[0]) < 1:
+                        print "** " + Players[n].Name + " think you're trying to cheat him."
+                        print "** " + Players[n].Name + " backs out of the deal."
+                    else:
+                        print "** " + You.Name + " accepts " + " " + Players[n].Name + "'s offer."
+                        givePlayer(You.Name, decision, giving)
+                        givePlayer(Players[n].Name, decision, giving * -1)
+                        givePlayer(You.Name, response[1], int(response[0]) * -1)
+                        givePlayer(Players[n].Name, response[1], int(response[0]))
+                else:
+                    print "** " + Players[n].Name + " doesn't want " + response[1] + "."
+                    print "** " + Players[n].Name + " backs out of the deal."
+            if "NO" in response:
+                print "** " + You.Name + " passes."
+        n = n + 1
+Deal()
